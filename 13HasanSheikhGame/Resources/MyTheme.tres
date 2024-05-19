@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://duxjjt4g44yw0"]
+
+[ext_resource type="Texture2D" uid="uid://ffvfcw3jeded" path="res://Sprites/UI/UI_Flat_Select_01a1.png" id="1_2ar0k"]
+[ext_resource type="FontFile" uid="uid://dcyenm27541rj" path="res://Fonts/Habbo.ttf" id="1_7wi5c"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ugrug"]
+texture = ExtResource("1_2ar0k")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[resource]
+default_font = ExtResource("1_7wi5c")
+default_font_size = 32
+Fonts/fonts/normal = ExtResource("1_7wi5c")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_ugrug")
