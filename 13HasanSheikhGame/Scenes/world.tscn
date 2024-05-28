@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2qwglcjcwbv"]
+[gd_scene load_steps=9 format=3 uid="uid://b2qwglcjcwbv"]
 
 [ext_resource type="PackedScene" uid="uid://bd6485lwlxrop" path="res://Scenes/player.tscn" id="1_lqwun"]
 [ext_resource type="Texture2D" uid="uid://7tohnxlcm3xe" path="res://Assets/Sprites/Background/tileset.png" id="2_21657"]
+[ext_resource type="Texture2D" uid="uid://tdl2h15bro2u" path="res://Assets/Sprites/Background/Dark Forest Parallax Background/Package/640x360/1.png" id="3_6wdi7"]
+[ext_resource type="Texture2D" uid="uid://c0airrsogbxkx" path="res://Assets/Sprites/Background/Dark Forest Parallax Background/Package/1920x1080/2.png" id="4_r78fn"]
+[ext_resource type="Texture2D" uid="uid://innvw47jjqep" path="res://Assets/Sprites/Background/Dark Forest Parallax Background/Package/1920x1080/3.png" id="5_56elc"]
+[ext_resource type="Texture2D" uid="uid://dfru84gscpikl" path="res://Assets/Sprites/Background/Dark Forest Parallax Background/Package/640x360/4.png" id="6_dbsiy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4a3gi"]
 texture = ExtResource("2_21657")
@@ -518,3 +522,53 @@ drag_bottom_margin = 0.0
 tile_set = SubResource("TileSet_x6mnd")
 format = 2
 layer_0/tile_data = PackedInt32Array(196610, 65536, 3, 196611, 327680, 3, 196612, 65536, 3, 196613, 196608, 3, 196614, 327680, 7, 196615, 458752, 7, 196616, 458752, 7, 196617, 327680, 7, 196618, 196608, 3, 196619, 327680, 7, 196620, 196608, 3, 196621, 196608, 3, 196622, 196608, 3, 196623, 458752, 7, 196624, 458752, 7, 196625, 196608, 3, 196626, 327680, 7, 196627, 327680, 7, 196628, 458752, 7, 196629, 458752, 7, 196630, 458752, 7, 196631, 327680, 7, 196632, 196608, 3, 131096, 327680, 7, 131095, 65536, 1, 131094, 65536, 1, 131093, 327680, 1, 131092, 327680, 1, 131091, 196608, 1, 131090, 65536, 1, 131089, 65536, 1, 131088, 196608, 1, 131087, 196608, 1, 131086, 196608, 1, 131085, 196608, 1, 131084, 196608, 1, 131083, 65536, 1, 131082, 65536, 1, 131081, 65536, 1, 131080, 196608, 1, 131074, 327680, 1, 131075, 327680, 1, 131076, 327680, 1, 131077, 65536, 1, 131078, 327680, 1, 131079, 327680, 1, 196633, 327680, 7, 262170, 327680, 7, 196634, 196608, 3, 131098, 458752, 7, 131097, 196608, 3, 262171, 458752, 7, 327707, 327680, 3, 196635, 196608, 3, 131099, 196608, 3, 65561, 458752, 7, 65562, 327680, 7, 65563, 327680, 7, 131100, 327680, 3, 196636, 327680, 3, 262172, 327680, 5, 393243, 327680, 5, 327706, 196608, 3, 327705, 458752, 7, 327704, 327680, 7, 262168, 196608, 3, 262169, 196608, 3, 65560, 327680, 1, 26, 65536, 1, 27, 327680, 1, 28, 327680, 1, 25, 327680, 1, 262167, 327680, 7, 262166, 327680, 7, 327701, 458752, 7, 327700, 327680, 7, 327699, 458752, 7, 327698, 458752, 7, 327697, 65536, 3, 327696, 327680, 3, 327695, 458752, 7, 262159, 196608, 3, 262160, 327680, 7, 262161, 327680, 7, 262162, 196608, 3, 262163, 327680, 7, 262164, 458752, 7, 262165, 458752, 7, 262158, 327680, 7, 262157, 458752, 7, 262156, 327680, 7, 262155, 327680, 7, 262154, 327680, 7, 262153, 327680, 7, 262152, 196608, 3, 262151, 196608, 3, 262150, 327680, 7, 262149, 327680, 7, 262148, 458752, 7, 262147, 327680, 7, 262146, 65536, 3, 327682, 65536, 5, 327683, 196608, 5, 327684, 196608, 5, 327685, 196608, 5, 327686, 196608, 5, 327687, 196608, 5, 327688, 196608, 5, 327689, 196608, 5, 327690, 196608, 5, 327691, 458752, 7, 327692, 327680, 7, 327693, 196608, 3, 327694, 196608, 3, 393230, 196608, 5, 393231, 196608, 5, 393232, 196608, 5, 393233, 196608, 5, 393234, 196608, 5, 393235, 196608, 5, 393236, 196608, 5, 393237, 196608, 5, 393238, 196608, 5, 393239, 196608, 5, 393240, 196608, 5, 327703, 196608, 3, 327702, 458752, 7, 393241, 196608, 5, 393242, 196608, 5, 393229, 196608, 5, 393228, 196608, 5, 393227, 65536, 5, 65564, 327680, 3, 65558, 196608, 7, 65557, 196608, 7, 65555, 196608, 7, 65551, 196608, 7, 65547, 196608, 7, 65545, 196608, 7, -65509, 196608, 7, 131101, 524288, 5, 131102, 524288, 5, 131103, 524288, 5, 393244, 524288, 5, 393245, 524288, 5, 393246, 524288, 5, 393247, 524288, 5, 393248, 524288, 5, 393249, 524288, 5, 393250, 524288, 5, 393251, 524288, 5, 393252, 524288, 5, 65569, 524288, 5, 65570, 524288, 5, 65571, 524288, 5, 65572, 524288, 5, 65573, 524288, 5, 65574, 524288, 5)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0)
+motion_mirroring = Vector2(860, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = 29.0
+offset_top = -473.0
+offset_right = 1949.0
+offset_bottom = 607.0
+texture = ExtResource("3_6wdi7")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0)
+motion_mirroring = Vector2(880, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
+offset_left = 7.0
+offset_top = -458.0
+offset_right = 1927.0
+offset_bottom = 622.0
+texture = ExtResource("4_r78fn")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0)
+motion_mirroring = Vector2(0.1, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer3"]
+offset_left = 5.0
+offset_top = -461.0
+offset_right = 2832.0
+offset_bottom = 619.0
+texture = ExtResource("5_56elc")
+stretch_mode = 1
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer4"]
+offset_left = -1.0
+offset_top = -523.0
+offset_right = 2825.0
+offset_bottom = 629.0
+texture = ExtResource("6_dbsiy")
+stretch_mode = 1
