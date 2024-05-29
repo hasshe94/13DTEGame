@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://fmycusps5il0"]
+
+[ext_resource type="Texture2D" uid="uid://5d0lvufihhjx" path="res://Assets/Sprites/Enemy/oposum.png" id="1_4h3nc"]
+[ext_resource type="Script" path="res://Scripts/opposum.gd" id="1_vt0bs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x0d2l"]
+radius = 14.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2up2i"]
+atlas = ExtResource("1_4h3nc")
+region = Rect2(0, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8q4o"]
+atlas = ExtResource("1_4h3nc")
+region = Rect2(36, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ufio"]
+atlas = ExtResource("1_4h3nc")
+region = Rect2(72, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kerr6"]
+atlas = ExtResource("1_4h3nc")
+region = Rect2(108, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jl4yk"]
+atlas = ExtResource("1_4h3nc")
+region = Rect2(144, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqpvo"]
+atlas = ExtResource("1_4h3nc")
+region = Rect2(180, 0, 36, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v2sw5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2up2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8q4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ufio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kerr6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jl4yk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqpvo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Opposum" type="CharacterBody2D" groups=["Hurt"]]
+script = ExtResource("1_vt0bs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x0d2l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, -4)
+sprite_frames = SubResource("SpriteFrames_v2sw5")
+autoplay = "default"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

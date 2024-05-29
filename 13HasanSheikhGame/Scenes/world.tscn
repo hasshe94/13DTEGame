@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b2qwglcjcwbv"]
+[gd_scene load_steps=13 format=3 uid="uid://b2qwglcjcwbv"]
 
 [ext_resource type="PackedScene" uid="uid://bd6485lwlxrop" path="res://Scenes/player.tscn" id="1_lqwun"]
 [ext_resource type="Texture2D" uid="uid://7tohnxlcm3xe" path="res://Assets/Sprites/Background/tileset.png" id="2_21657"]
@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://innvw47jjqep" path="res://Assets/Sprites/Background/Dark Forest Parallax Background/Package/1920x1080/3.png" id="5_56elc"]
 [ext_resource type="Texture2D" uid="uid://dfru84gscpikl" path="res://Assets/Sprites/Background/Dark Forest Parallax Background/Package/640x360/4.png" id="6_dbsiy"]
 [ext_resource type="PackedScene" uid="uid://cbko5oa0uqbvi" path="res://Scenes/artifact.tscn" id="7_jmaeo"]
-[ext_resource type="Script" path="res://Scenes/Label.gd" id="8_6ojdt"]
+[ext_resource type="Script" path="res://Scripts/Label.gd" id="8_6ojdt"]
+[ext_resource type="PackedScene" uid="uid://ro0sg2bc8dvd" path="res://Scenes/eagle.tscn" id="9_318jh"]
+[ext_resource type="PackedScene" uid="uid://fmycusps5il0" path="res://Scenes/opposum.tscn" id="10_6hpao"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4a3gi"]
 texture = ExtResource("2_21657")
@@ -226,11 +228,9 @@ texture = ExtResource("2_21657")
 1:7/0 = 0
 1:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:7/0/physics_layer_0/angular_velocity = 0.0
-1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:7/0 = 0
 3:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:7/0/physics_layer_0/angular_velocity = 0.0
-3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:7/0 = 0
 5:7/0/terrain_set = 0
 5:7/0/terrain = 0
@@ -587,3 +587,9 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "SCORE"
 script = ExtResource("8_6ojdt")
+
+[node name="Eagle" parent="." instance=ExtResource("9_318jh")]
+position = Vector2(754, -61)
+
+[node name="Opposum" parent="." instance=ExtResource("10_6hpao")]
+position = Vector2(289, 24)
