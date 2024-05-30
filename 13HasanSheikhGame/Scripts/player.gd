@@ -6,6 +6,8 @@ extends CharacterBody2D
 @export var acceleration : float = 15.0
 @export var jumps = 1
 
+var currentHealth: int = 3
+
 enum state {IDLE, RUNNING, JUMPUP, JUMPDOWN, HURT}
 
 var anim_state = state.IDLE
