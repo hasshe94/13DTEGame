@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bd6485lwlxrop"]
+[gd_scene load_steps=36 format=3 uid="uid://bd6485lwlxrop"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_at6ts"]
 [ext_resource type="Texture2D" uid="uid://cbqndaci2m8m3" path="res://Assets/platformer_metroidvania asset pack v1.01/platformer_metroidvania asset pack v1.01/herochar sprites(new)/herochar_hit_anim_strip_3.png" id="2_dg6yh"]
@@ -168,7 +168,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tor1e"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8yoht"]
 radius = 4.0
 height = 12.0
 
@@ -320,6 +320,14 @@ _data = {
 "run": SubResource("Animation_773ho")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tor1e"]
+radius = 4.0
+height = 12.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0604s"]
+radius = 4.0
+height = 12.0
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_at6ts")
 
@@ -327,11 +335,26 @@ script = ExtResource("1_at6ts")
 sprite_frames = SubResource("SpriteFrames_kj60l")
 animation = &"hurt"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_tor1e")
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_8yoht")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_dfwfa")
 }
 autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_tor1e")
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("CapsuleShape2D_0604s")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

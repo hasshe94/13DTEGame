@@ -72,3 +72,21 @@ func _physics_process(delta):
 	update_state()
 	update_animation(direction)
 	move_and_slide()
+
+
+
+
+
+
+
+
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("Hurt"):
+		get_tree().change_scene_to_file("res://Scenes/world.tscn")
+
+
+
+func _on_area_2d_2_body_entered(body):
+	if body.is_in_group("Hurt"):
+		get_tree().change_scene_to_file("res://Scenes/world.tscn")
