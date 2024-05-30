@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b2qwglcjcwbv"]
+[gd_scene load_steps=15 format=3 uid="uid://b2qwglcjcwbv"]
 
 [ext_resource type="PackedScene" uid="uid://bd6485lwlxrop" path="res://Scenes/player.tscn" id="1_lqwun"]
 [ext_resource type="Texture2D" uid="uid://7tohnxlcm3xe" path="res://Assets/Sprites/Background/tileset.png" id="2_21657"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ro0sg2bc8dvd" path="res://Scenes/eagle.tscn" id="9_318jh"]
 [ext_resource type="PackedScene" uid="uid://fmycusps5il0" path="res://Scenes/opposum.tscn" id="10_6hpao"]
 [ext_resource type="PackedScene" uid="uid://v3wkgdcunc2" path="res://Scenes/Deathwater.tscn" id="11_e31ng"]
+[ext_resource type="AudioStream" uid="uid://c5akum00ogh67" path="res://Assets/Audio/midnight-forest-184304.mp3" id="12_w0cvt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4a3gi"]
 texture = ExtResource("2_21657")
@@ -646,6 +647,9 @@ position = Vector2(10, -427)
 [node name="Artifact6" parent="Collectables" instance=ExtResource("7_jmaeo")]
 position = Vector2(952, -458)
 
+[node name="Artifact7" parent="Collectables" instance=ExtResource("7_jmaeo")]
+position = Vector2(8, -232)
+
 [node name="Deathwater" type="Node2D" parent="."]
 
 [node name="deathwater6" parent="Deathwater" instance=ExtResource("11_e31ng")]
@@ -746,5 +750,6 @@ offset_bottom = 23.0
 text = "SCORE"
 script = ExtResource("8_6ojdt")
 
-[node name="Artifact" parent="." instance=ExtResource("7_jmaeo")]
-position = Vector2(8, -232)
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_w0cvt")
+autoplay = true
