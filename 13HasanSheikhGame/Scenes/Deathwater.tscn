@@ -1,0 +1,92 @@
+[gd_scene load_steps=10 format=3 uid="uid://v3wkgdcunc2"]
+
+[ext_resource type="Texture2D" uid="uid://48e8lm5n0aeb" path="res://Assets/Sprites/Wasteland-Files (1)-1.png.png" id="1_0y0t7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8smqs"]
+atlas = ExtResource("1_0y0t7")
+region = Rect2(0, 0, 20, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewd0x"]
+atlas = ExtResource("1_0y0t7")
+region = Rect2(20, 0, 20, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obx06"]
+atlas = ExtResource("1_0y0t7")
+region = Rect2(40, 0, 20, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5oaa"]
+atlas = ExtResource("1_0y0t7")
+region = Rect2(60, 0, 20, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_40g0d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8smqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewd0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obx06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5oaa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t18ox"]
+
+[sub_resource type="Animation" id="Animation_8ifbc"]
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["default"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1hwv6"]
+_data = {
+"default": SubResource("Animation_8ifbc")
+}
+
+[node name="deathwater" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_40g0d")
+autoplay = "default"
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_t18ox")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../CollisionShape2D")
+libraries = {
+"": SubResource("AnimationLibrary_1hwv6")
+}
+autoplay = "default"
