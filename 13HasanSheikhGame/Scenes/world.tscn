@@ -650,6 +650,9 @@ position = Vector2(952, -458)
 [node name="Artifact7" parent="Collectables" instance=ExtResource("7_jmaeo")]
 position = Vector2(8, -232)
 
+[node name="Artifact8" parent="Collectables" instance=ExtResource("7_jmaeo")]
+position = Vector2(736, 472)
+
 [node name="Deathwater" type="Node2D" parent="."]
 
 [node name="deathwater6" parent="Deathwater" instance=ExtResource("11_e31ng")]
@@ -753,6 +756,3 @@ script = ExtResource("8_6ojdt")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_w0cvt")
 autoplay = true
-
-[node name="Artifact" parent="." instance=ExtResource("7_jmaeo")]
-position = Vector2(736, 472)
