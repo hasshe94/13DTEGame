@@ -630,18 +630,6 @@ drag_top_margin = 0.0
 drag_right_margin = 0.0
 drag_bottom_margin = 0.0
 
-[node name="PauseMenu" parent="Player/Camera2D" instance=ExtResource("14_57nb3")]
-visible = false
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = -68.0
-offset_top = -83.0
-offset_right = -68.0
-offset_bottom = -83.0
-grow_horizontal = 1
-grow_vertical = 1
-
 [node name="Collectables" type="Node2D" parent="."]
 
 [node name="Artifact" parent="Collectables" instance=ExtResource("7_jmaeo")]
@@ -773,3 +761,14 @@ script = ExtResource("8_6ojdt")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_w0cvt")
 autoplay = true
+
+[node name="PauseMenu" parent="." instance=ExtResource("14_57nb3")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -26.0
+offset_top = -63.0
+offset_right = -26.0
+offset_bottom = -63.0
+grow_horizontal = 1
+grow_vertical = 1
