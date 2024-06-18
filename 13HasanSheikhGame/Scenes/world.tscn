@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b2qwglcjcwbv"]
+[gd_scene load_steps=18 format=3 uid="uid://b2qwglcjcwbv"]
 
 [ext_resource type="PackedScene" uid="uid://bd6485lwlxrop" path="res://Scenes/player.tscn" id="1_lqwun"]
 [ext_resource type="Script" path="res://Scenes/world.gd" id="1_yjkrl"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://v3wkgdcunc2" path="res://Scenes/Deathwater.tscn" id="11_e31ng"]
 [ext_resource type="AudioStream" uid="uid://c5akum00ogh67" path="res://Assets/Audio/midnight-forest-184304.mp3" id="12_w0cvt"]
 [ext_resource type="PackedScene" uid="uid://dvx7omel0ua76" path="res://Scenes/pause_menu.tscn" id="14_57nb3"]
+[ext_resource type="PackedScene" uid="uid://cye312ppohejx" path="res://Scenes/spike_trap.tscn" id="15_akfch"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4a3gi"]
 texture = ExtResource("2_21657")
@@ -668,98 +669,6 @@ position = Vector2(8, -232)
 [node name="Artifact8" parent="Collectables" instance=ExtResource("7_jmaeo")]
 position = Vector2(736, 472)
 
-[node name="Deathwater" type="Node2D" parent="."]
-
-[node name="deathwater6" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(984, 344)
-
-[node name="deathwater7" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(1000, 344)
-
-[node name="deathwater8" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(1016, 344)
-
-[node name="deathwater9" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(1032, 344)
-
-[node name="deathwater10" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(1048, 344)
-
-[node name="deathwater11" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(1064, 344)
-
-[node name="deathwater12" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(1080, 344)
-
-[node name="deathwater13" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(1096, 344)
-
-[node name="deathwater14" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(1112, 344)
-
-[node name="deathwater15" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(1128, 344)
-
-[node name="deathwater16" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(1144, 344)
-
-[node name="deathwater17" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(1160, 344)
-
-[node name="deathwater18" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(1176, 344)
-
-[node name="deathwater19" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(1192, 344)
-
-[node name="deathwater20" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(1208, 344)
-
-[node name="deathwater21" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(1224, 344)
-
-[node name="deathwater22" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(1240, 344)
-
-[node name="deathwater23" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(1256, 344)
-
-[node name="deathwater24" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(1272, 344)
-
-[node name="deathwater25" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(1288, 344)
-
-[node name="deathwater26" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(1304, 344)
-
-[node name="deathwater27" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(1320, 344)
-
-[node name="deathwater28" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(1336, 344)
-
-[node name="deathwater29" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(1352, 344)
-
-[node name="deathwater30" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(1368, 344)
-
-[node name="deathwater" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(904, 344)
-
-[node name="deathwater2" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(920, 344)
-
-[node name="deathwater3" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(936, 344)
-
-[node name="deathwater4" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(952, 344)
-
-[node name="deathwater5" parent="Deathwater" instance=ExtResource("11_e31ng")]
-position = Vector2(968, 344)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
@@ -773,3 +682,106 @@ script = ExtResource("8_6ojdt")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_w0cvt")
 autoplay = true
+
+[node name="Traps" type="Node2D" parent="."]
+
+[node name="Deathwater" type="Node2D" parent="Traps"]
+
+[node name="deathwater6" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(984, 344)
+
+[node name="deathwater7" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(1000, 344)
+
+[node name="deathwater8" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(1016, 344)
+
+[node name="deathwater9" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(1032, 344)
+
+[node name="deathwater10" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(1048, 344)
+
+[node name="deathwater11" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(1064, 344)
+
+[node name="deathwater12" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(1080, 344)
+
+[node name="deathwater13" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(1096, 344)
+
+[node name="deathwater14" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(1112, 344)
+
+[node name="deathwater15" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(1128, 344)
+
+[node name="deathwater16" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(1144, 344)
+
+[node name="deathwater17" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(1160, 344)
+
+[node name="deathwater18" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(1176, 344)
+
+[node name="deathwater19" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(1192, 344)
+
+[node name="deathwater20" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(1208, 344)
+
+[node name="deathwater21" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(1224, 344)
+
+[node name="deathwater22" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(1240, 344)
+
+[node name="deathwater23" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(1256, 344)
+
+[node name="deathwater24" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(1272, 344)
+
+[node name="deathwater25" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(1288, 344)
+
+[node name="deathwater26" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(1304, 344)
+
+[node name="deathwater27" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(1320, 344)
+
+[node name="deathwater28" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(1336, 344)
+
+[node name="deathwater29" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(1352, 344)
+
+[node name="deathwater30" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(1368, 344)
+
+[node name="deathwater" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(904, 344)
+
+[node name="deathwater2" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(920, 344)
+
+[node name="deathwater3" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(936, 344)
+
+[node name="deathwater4" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(952, 344)
+
+[node name="deathwater5" parent="Traps/Deathwater" instance=ExtResource("11_e31ng")]
+position = Vector2(968, 344)
+
+[node name="SpikeTrap" type="Node2D" parent="Traps"]
+
+[node name="SpikeTrap" parent="Traps/SpikeTrap" instance=ExtResource("15_akfch")]
+position = Vector2(440, -39)
+
+[node name="SpikeTrap" parent="." instance=ExtResource("15_akfch")]
+position = Vector2(536, 9)
+rotation = 3.14159
