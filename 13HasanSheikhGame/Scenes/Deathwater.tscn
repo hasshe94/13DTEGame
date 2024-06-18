@@ -73,14 +73,14 @@ _data = {
 "default": SubResource("Animation_8ifbc")
 }
 
-[node name="deathwater" type="Area2D" groups=["Hurt"]]
+[node name="deathwater" type="Area2D" groups=["hitBox"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_40g0d")
 autoplay = "default"
 frame = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["hitBox"]]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_t18ox")
 

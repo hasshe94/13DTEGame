@@ -6,7 +6,8 @@ extends CharacterBody2D
 @export var acceleration : float = 15.0
 @export var jumps = 1
 
-var currentHealth: int = 3
+@export var maxHealth = 3
+@onready var currentHealth: int = maxHealth
 
 enum state {IDLE, RUNNING, JUMPUP, JUMPDOWN, HURT}
 
@@ -81,12 +82,21 @@ func _physics_process(delta):
 
 
 
-func _on_area_2d_body_entered(body):
-	if body.is_in_group("Hurt"):
-		get_tree().change_scene_to_file("res://Scenes/world.tscn")
+#func _on_area_2d_body_entered(body):
+	#if body.is_in_group("Hurt"):
+		#get_tree().change_scene_to_file("res://Scenes/world.tscn")
 
 
+	
 
-func _on_area_2d_2_body_entered(body):
-	if body.is_in_group("Hurt"):
-		get_tree().change_scene_to_file("res://Scenes/world.tscn")
+#func _on_area_2d_2_body_entered(body):
+	#if body.is_in_group("Hurt"):
+		#get_tree().change_scene_to_file("res://Scenes/world.tscn")
+
+
+func _on_area_2d_area_entered(area):
+	if area.name == "hitBox":
+		currentHealth -=1
+		if currentHealth <0:
+			currentHealth = maxHealth
+		print_debug(currentHealth)

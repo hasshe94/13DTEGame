@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://xhn2mydvjywr"]
+
+[ext_resource type="Texture2D" uid="uid://yuro72ccxdls" path="res://Assets/Sprites/Pickups/cherry.png" id="1_pqy23"]
+
+[node name="heartGui" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(16, 24)
+offset_right = 16.0
+offset_bottom = 24.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pqy23")
+centered = false
+hframes = 5
