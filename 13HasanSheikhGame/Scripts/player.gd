@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+signal healthChanged
 @export var speed = 300.0
 @export var jump_velocity = -400.0
 @export var acceleration : float = 15.0
@@ -99,4 +99,5 @@ func _on_area_2d_area_entered(area):
 		currentHealth -=1
 		if currentHealth <0:
 			currentHealth = maxHealth
-		print_debug(currentHealth)
+		
+		healthChanged.emit(currentHealth)
