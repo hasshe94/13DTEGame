@@ -6,6 +6,8 @@ signal healthChanged
 @export var jump_velocity = -400.0
 @export var acceleration : float = 15.0
 @export var jumps = 1
+@onready var health_bar = $HealthBar
+var hp = 10
 
 #@export var maxHealth = 3
 #@onready var currentHealth: int = maxHealth
@@ -19,6 +21,15 @@ var anim_state = state.IDLE
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+func _ready():
+	health_bar.value = hp
+	
+func _process(delta):
+	health_bar.value = hp
+	
+
+
 
 func update_state():
 	if anim_state == state.HURT:
@@ -64,7 +75,7 @@ func attack():
 	if not is_attacking:
 		is_attacking = true
 		print("Attacking!")
-		$AnimationPlayer.play("attack")#
+		$AnimationPlayer.play("attack")
 		is_attacking = false
 
 
@@ -77,13 +88,13 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
 		
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack") and is_on_floor():
 		animation_player.play("attack")
 
-	if Input.is_action_just_pressed("crouch"):
+	if Input.is_action_just_pressed("crouch") and is_on_floor():
 		animation_player.play("crouch")
 
-	if Input.is_action_just_pressed("roll"):
+	if Input.is_action_just_pressed("roll") and is_on_floor():
 		animation_player.play("roll")
 
 
