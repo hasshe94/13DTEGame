@@ -9,7 +9,7 @@ signal healthChanged
 @export var maxHealth = 3
 @onready var currentHealth: int = maxHealth
 
-enum state {IDLE, RUNNING, JUMPUP, JUMPDOWN, HURT}
+enum state {IDLE, RUNNING, JUMPUP, JUMPDOWN, HURT, CROUCH, ROLL, ATTACK, DIE}
 
 var anim_state = state.IDLE
 
@@ -49,6 +49,15 @@ func update_animation(direction):
 			animation_player.play("jump_down")
 		state.HURT:
 			animation_player.play("hurt")
+		state.CROUCH:
+			animation_player.play("crouch")
+		state.ROLL:
+			animation_player.play("roll")
+		state.ATTACK:
+			animation_player.play("attack")
+		state.DIE:
+			animation_player.play("die")
+
 		
 	
 
@@ -61,6 +70,16 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
+		
+	if Input.is_action_just_pressed("attack"):
+		animation_player.play("attack")
+
+	if Input.is_action_just_pressed("crouch"):
+		animation_player.play("crouch")
+
+	if Input.is_action_just_pressed("roll"):
+		animation_player.play("roll")
+
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
