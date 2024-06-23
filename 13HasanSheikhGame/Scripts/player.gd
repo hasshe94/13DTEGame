@@ -1,4 +1,5 @@
 extends CharacterBody2D
+var is_attacking = false
 
 signal healthChanged
 @export var speed = 300.0
@@ -6,8 +7,8 @@ signal healthChanged
 @export var acceleration : float = 15.0
 @export var jumps = 1
 
-@export var maxHealth = 3
-@onready var currentHealth: int = maxHealth
+#@export var maxHealth = 3
+#@onready var currentHealth: int = maxHealth
 
 enum state {IDLE, RUNNING, JUMPUP, JUMPDOWN, HURT, CROUCH, ROLL, ATTACK, DIE}
 
@@ -59,7 +60,12 @@ func update_animation(direction):
 			animation_player.play("die")
 
 		
-	
+func attack():
+	if not is_attacking:
+		is_attacking = true
+		print("Attacking!")
+		$AnimationPlayer.play("attack")#
+		is_attacking = false
 
 
 func _physics_process(delta):
@@ -113,10 +119,10 @@ func _physics_process(delta):
 		#get_tree().change_scene_to_file("res://Scenes/world.tscn")
 
 
-func _on_area_2d_area_entered(area):
-	if area.name == "hitBox":
-		currentHealth -=1
-		if currentHealth <0:
-			currentHealth = maxHealth
+#func _on_area_2d_area_entered(area):
+	#if area.name == "hitBox":
+		#currentHealth -=1
+		#if currentHealth <0:
+			#currentHealth = maxHealth
 		
-		healthChanged.emit(currentHealth)
+		#healthChanged.emit(currentHealth)

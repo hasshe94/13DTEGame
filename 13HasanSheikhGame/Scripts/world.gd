@@ -1,12 +1,12 @@
 extends Node2D
 
-@onready var heartsContainer = $CanvasLayer/HeartsContainer
+#@onready var heartsContainer = $CanvasLayer/HeartsContainer
 @onready var pause_menu = $Player/Camera2D/PauseMenu
 @onready var player = $Player
 
 
-func _ready():
-	heartsContainer.setMaxHearts(player.maxHealth)
+#func _ready():
+	#heartsContainer.setMaxHearts(player.maxHealth)
 
 
 
