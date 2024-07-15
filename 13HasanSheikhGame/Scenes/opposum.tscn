@@ -56,7 +56,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Opposum" type="CharacterBody2D" groups=["hitBox"]]
+[node name="Opposum" type="CharacterBody2D" groups=["hurt"]]
 script = ExtResource("1_vt0bs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["hitBox"]]

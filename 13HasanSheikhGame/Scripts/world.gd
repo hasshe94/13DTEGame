@@ -1,7 +1,7 @@
 extends Node2D
 
 #@onready var heartsContainer = $CanvasLayer/HeartsContainer
-@onready var pause_menu = $Player/PauseMenu
+@onready var pause_menu = %PauseMenu
 @onready var player = $Player
 
 #func _ready():
@@ -17,12 +17,13 @@ func _process(delta):
 		pauseMenu()
 
 func pauseMenu():
+	print("pause")
 	if paused:
 		pause_menu.hide()
-		Engine.time_scale = 1
+		get_tree().paused = false
 	else:
 		pause_menu.show()
-		Engine.time_scale = 0
+		get_tree().paused = true
 	
 	paused= !paused
 

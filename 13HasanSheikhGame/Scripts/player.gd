@@ -6,18 +6,19 @@ signal healthChanged
 @export var jump_velocity = -400.0
 @export var acceleration : float = 15.0
 @export var jumps = 1
-@onready var health_bar = $HealthBar
+
 var hp = 10
+@onready var health_bar = %HealthBar
 
 #@export var maxHealth = 3
 #@onready var currentHealth: int = maxHealth
 
 enum state {IDLE, RUNNING, JUMPUP, JUMPDOWN, HURT, CROUCH, ROLL, ATTACK, DIE}
 
-var anim_state = state.IDLE
+@export var anim_state = state.IDLE
 
 @onready var animator = $AnimatedSprite2D
-@onready var animation_player = $AnimatedSprite2D
+@onready var animation_player = $AnimationPlayer
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -29,9 +30,18 @@ func _process(delta):
 	health_bar.value = hp
 	
 
+func hit():
+	hp -= 1
+	health_bar.value = hp
 
 
 func update_state():
+
+	if anim_state == state.ATTACK:
+		await animation_player.animation_finished
+		print("done")
+		anim_state = state.IDLE
+		return
 	if anim_state == state.HURT:
 		return
 	if is_on_floor():
@@ -71,12 +81,12 @@ func update_animation(direction):
 			animation_player.play("die")
 
 		
-func attack():
-	if not is_attacking:
-		is_attacking = true
-		print("Attacking!")
-		$AnimationPlayer.play("attack")
-		is_attacking = false
+#func attack():
+	#if not is_attacking:
+		#is_attacking = true
+		#print("Attacking!")
+		#$AnimationPlayer.play("attack")
+		#is_attacking = false
 
 
 func _physics_process(delta):
@@ -89,13 +99,13 @@ func _physics_process(delta):
 		velocity.y = jump_velocity
 		
 	if Input.is_action_just_pressed("attack") and is_on_floor():
-		animation_player.play("attack")
+		anim_state = state.ATTACK
 
 	if Input.is_action_just_pressed("crouch") and is_on_floor():
-		animation_player.play("crouch")
+		anim_state = state.CROUCH
 
 	if Input.is_action_just_pressed("roll") and is_on_floor():
-		animation_player.play("roll")
+		anim_state = state.ROLL
 
 
 	# Get the input direction and handle the movement/deceleration.
@@ -137,3 +147,13 @@ func _physics_process(delta):
 			#currentHealth = maxHealth
 		
 		#healthChanged.emit(currentHealth)
+
+
+func _on_area_2d_area_entered(area):
+	pass # Replace with function body.
+
+
+func _on_hurt_box_area_entered(area):
+	if area.is_in_group("hurt"):
+		hit()
+	

@@ -9,6 +9,7 @@ const first_scene = preload("res://Scenes/world.tscn")
 var current_selection = 0
 
 func _ready():
+	get_tree().paused = false
 	set_current_selection(0)
 	
 func _process(_delta):
