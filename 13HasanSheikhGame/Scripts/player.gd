@@ -29,10 +29,12 @@ func _ready():
 func _process(delta):
 	health_bar.value = hp
 	
+	
 
 func hit():
 	hp -= 1
 	health_bar.value = hp
+
 
 
 func update_state():
@@ -119,7 +121,6 @@ func _physics_process(delta):
 	update_state()
 	update_animation(direction)
 	move_and_slide()
-
 
 
 
