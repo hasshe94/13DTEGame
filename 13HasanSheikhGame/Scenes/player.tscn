@@ -884,8 +884,7 @@ script = ExtResource("1_at6ts")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(5, -23)
 sprite_frames = SubResource("SpriteFrames_kj60l")
-animation = &"attack"
-frame = 3
+animation = &"die"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

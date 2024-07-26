@@ -34,6 +34,17 @@ func _process(delta):
 func hit():
 	hp -= 1
 	health_bar.value = hp
+	if hp <=0:
+		get_tree().change_scene_to_file("res://Scenes/DeathScreen.tscn")
+
+#func die():
+	#anim_state=state.DIE
+	#update_animation(0)
+#
+#func _on_animaition_finished(anim_state):
+	#if anim_state == "die":
+		#get_tree().change_scene_to_file("res://Scenes/death_screen.tscn")
+	
 
 
 
