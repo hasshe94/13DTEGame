@@ -1,0 +1,109 @@
+[gd_scene load_steps=13 format=3 uid="uid://c0l4iskcmywi7"]
+
+[ext_resource type="Script" path="res://Scripts/Health.gd" id="1_hmnbd"]
+[ext_resource type="Texture2D" uid="uid://c0uhi48tdfkqr" path="res://Assets/Animation Pack/Crystal.png" id="2_ut6e8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_og2t1"]
+radius = 6.08276
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5vmr"]
+atlas = ExtResource("2_ut6e8")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dxu0"]
+atlas = ExtResource("2_ut6e8")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhiq4"]
+atlas = ExtResource("2_ut6e8")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klanj"]
+atlas = ExtResource("2_ut6e8")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bdj4"]
+atlas = ExtResource("2_ut6e8")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qofmg"]
+atlas = ExtResource("2_ut6e8")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vanrc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5vmr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dxu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhiq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klanj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bdj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qofmg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_b616g"]
+length = 1.2
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["default"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r3rvf"]
+_data = {
+"default": SubResource("Animation_b616g")
+}
+
+[node name="Health" type="Area2D" groups=["health"]]
+script = ExtResource("1_hmnbd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_og2t1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.25, 0.21875)
+sprite_frames = SubResource("SpriteFrames_vanrc")
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_r3rvf")
+}
+autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

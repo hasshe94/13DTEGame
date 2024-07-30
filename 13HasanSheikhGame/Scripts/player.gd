@@ -29,7 +29,10 @@ func _ready():
 func _process(delta):
 	health_bar.value = hp
 	
-	
+
+func health():
+	hp += 1
+	health_bar.value = hp
 
 func hit():
 	hp -= 1
@@ -168,4 +171,9 @@ func _on_area_2d_area_entered(area):
 func _on_hurt_box_area_entered(area):
 	if area.is_in_group("hurt"):
 		hit()
+	elif area.is_in_group("health"):
+		health()
+
+
+
 	

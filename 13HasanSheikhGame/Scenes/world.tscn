@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b2qwglcjcwbv"]
+[gd_scene load_steps=21 format=3 uid="uid://b2qwglcjcwbv"]
 
 [ext_resource type="PackedScene" uid="uid://bd6485lwlxrop" path="res://Scenes/player.tscn" id="1_lqwun"]
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_vexoy"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dvx7omel0ua76" path="res://Scenes/pause_menu.tscn" id="14_57nb3"]
 [ext_resource type="PackedScene" uid="uid://cye312ppohejx" path="res://Scenes/spike_trap.tscn" id="15_akfch"]
 [ext_resource type="AudioStream" uid="uid://bjlhwwi3qwqdh" path="res://Assets/Audio/inspiring-cinematic-ambient-116199.mp3" id="15_pwbbc"]
+[ext_resource type="PackedScene" uid="uid://c0l4iskcmywi7" path="res://Scenes/health.tscn" id="16_ku6qk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4a3gi"]
 texture = ExtResource("4_0qtru")
@@ -802,3 +803,6 @@ rotation = 3.14159
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_pwbbc")
 autoplay = true
+
+[node name="Health" parent="." instance=ExtResource("16_ku6qk")]
+position = Vector2(168, 16)

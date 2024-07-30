@@ -1,0 +1,117 @@
+[gd_scene load_steps=12 format=3 uid="uid://sva1xfep4cy0"]
+
+[ext_resource type="Texture2D" uid="uid://dkymt67qoq4sd" path="res://Assets/Animation Pack/Hit Effect.png" id="1_7kq20"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5hp5"]
+atlas = ExtResource("1_7kq20")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpnrr"]
+atlas = ExtResource("1_7kq20")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_df3jm"]
+atlas = ExtResource("1_7kq20")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hiqf"]
+atlas = ExtResource("1_7kq20")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvt3c"]
+atlas = ExtResource("1_7kq20")
+region = Rect2(0, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jkic"]
+atlas = ExtResource("1_7kq20")
+region = Rect2(0, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvupt"]
+atlas = ExtResource("1_7kq20")
+region = Rect2(0, 768, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7x8em"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5hp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpnrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_df3jm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hiqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvt3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jkic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvupt")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_qkm6e"]
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["default"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v7jy4"]
+_data = {
+"default": SubResource("Animation_qkm6e")
+}
+
+[node name="HealthVanish" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7x8em")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_v7jy4")
+}
+autoplay = "default"
