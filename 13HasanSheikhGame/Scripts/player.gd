@@ -1,12 +1,14 @@
 extends CharacterBody2D
 var is_attacking = false
+@onready var sfx_jump = $sfx_jump
+@onready var sfx_death = $sfx_death
 
 signal healthChanged
 @export var speed = 300.0
 @export var jump_velocity = -400.0
 @export var acceleration : float = 15.0
 @export var jumps = 1
-
+var dead = false
 var hp = 10
 @onready var health_bar = %HealthBar
 
@@ -38,6 +40,10 @@ func hit():
 	hp -= 1
 	health_bar.value = hp
 	if hp <=0:
+		animation_player.play("die")
+		sfx_death.play()
+		dead = true
+		await animation_player.animation_finished
 		get_tree().change_scene_to_file("res://Scenes/DeathScreen.tscn")
 
 #func die():
@@ -52,7 +58,7 @@ func hit():
 
 
 func update_state():
-
+	
 	if anim_state == state.ATTACK:
 		await animation_player.animation_finished
 		print("done")
@@ -72,6 +78,7 @@ func update_state():
 			anim_state = state.JUMPDOWN
 
 func update_animation(direction):
+
 	if direction > 0:
 		animator.flip_h = false
 	elif direction < 0:
@@ -107,12 +114,15 @@ func update_animation(direction):
 
 func _physics_process(delta):
 	# Add the gravity.
+	if dead : return
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
+		sfx_jump.play()
+
 		
 	if Input.is_action_just_pressed("attack") and is_on_floor():
 		anim_state = state.ATTACK

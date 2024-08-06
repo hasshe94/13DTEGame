@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ctv2t8aliuwag"
+path="res://.godot/imported/FEETHmn_Jumping on grass 1 (ID 1839)_BSB.mp3-c02902c71a965bfc5a3e18d26e4beb80.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/FEETHmn_Jumping on grass 1 (ID 1839)_BSB.mp3"
+dest_files=["res://.godot/imported/FEETHmn_Jumping on grass 1 (ID 1839)_BSB.mp3-c02902c71a965bfc5a3e18d26e4beb80.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
