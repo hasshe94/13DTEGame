@@ -26,4 +26,3 @@ func pauseMenu():
 		get_tree().paused = true
 	
 	paused= !paused
-

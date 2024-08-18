@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://1ld7p058rk81" path="res://Assets/FreeKnight_v1/Colour1/Outline/120x80_PNGSheets/_Jump.png" id="7_sifls"]
 [ext_resource type="Texture2D" uid="uid://bt4tha1lvkxmd" path="res://Assets/FreeKnight_v1/Colour1/Outline/120x80_PNGSheets/_Roll.png" id="8_1skrv"]
 [ext_resource type="Texture2D" uid="uid://cf4wuo33yskg5" path="res://Assets/FreeKnight_v1/Colour1/Outline/120x80_PNGSheets/_Run.png" id="9_dwg31"]
-[ext_resource type="AudioStream" uid="uid://duco6pjdstmwf" path="res://Assets/Audio/SFX/toy-button-105724.mp3" id="11_jrrlu"]
+[ext_resource type="AudioStream" uid="uid://ocis3pktswdj" path="res://Assets/Audio/jumping_1-6452.mp3" id="11_w602f"]
 [ext_resource type="AudioStream" uid="uid://bcowgwnxipkin" path="res://Assets/Audio/SFX/tubular-bell-of-death-89485.mp3" id="12_lgj5y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6h7o"]
@@ -520,7 +520,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [true]
 }
 
@@ -559,7 +559,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
+"update": 0,
 "values": [true, false, true]
 }
 tracks/3/type = "value"
@@ -910,7 +910,8 @@ position = Vector2(5, 0)
 shape = SubResource("CapsuleShape2D_yp7aq")
 
 [node name="sfx_jump" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("11_jrrlu")
+stream = ExtResource("11_w602f")
+volume_db = 2.0
 
 [node name="sfx_death" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_lgj5y")
