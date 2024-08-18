@@ -26,6 +26,7 @@ func handle_selection(_current_selection):
 	if _current_selection == 0:
 		GameManager.reset
 		get_tree().change_scene_to_file("res://Scenes/world.tscn")
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		#queue_free()
 	elif _current_selection == 1:
 		get_tree().change_scene_to_file("res://Scenes/about.tscn")
