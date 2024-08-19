@@ -32,7 +32,7 @@ theme_override_constants/shadow_offset_x = 4
 theme_override_constants/shadow_offset_y = 4
 theme_override_constants/outline_size = 1
 theme_override_constants/shadow_outline_size = 1
-theme_override_font_sizes/font_size = 54
+theme_override_font_sizes/font_size = 100
 text = "You Died
 "
 
@@ -56,6 +56,7 @@ theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 0
 theme_override_constants/shadow_outline_size = 3
+theme_override_font_sizes/font_size = 70
 text = ">"
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
@@ -66,7 +67,7 @@ theme_override_constants/shadow_offset_x = 4
 theme_override_constants/shadow_offset_y = 4
 theme_override_constants/outline_size = 1
 theme_override_constants/shadow_outline_size = 1
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 70
 text = "Restart"
 
 [node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
@@ -89,6 +90,7 @@ theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 0
 theme_override_constants/shadow_outline_size = 3
+theme_override_font_sizes/font_size = 70
 text = ">"
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer3/VBoxContainer/CenterContainer/HBoxContainer"]
@@ -99,7 +101,7 @@ theme_override_constants/shadow_offset_x = 4
 theme_override_constants/shadow_offset_y = 4
 theme_override_constants/outline_size = 1
 theme_override_constants/shadow_outline_size = 1
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 70
 text = "Main Menu"
 
 [node name="CenterContainer4" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
@@ -122,6 +124,7 @@ theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 0
 theme_override_constants/shadow_outline_size = 3
+theme_override_font_sizes/font_size = 70
 text = ">"
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer4/VBoxContainer/CenterContainer/HBoxContainer"]
@@ -132,7 +135,7 @@ theme_override_constants/shadow_offset_x = 4
 theme_override_constants/shadow_offset_y = 4
 theme_override_constants/outline_size = 1
 theme_override_constants/shadow_outline_size = 1
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 70
 text = "Exit"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

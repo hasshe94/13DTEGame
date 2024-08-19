@@ -357,10 +357,13 @@ metadata/_edit_use_anchors_ = true
 
 [node name="HealthBar" type="ProgressBar" parent="Player/CanvasLayer"]
 unique_name_in_owner = true
-offset_left = 984.0
-offset_top = 37.0
-offset_right = 1112.0
-offset_bottom = 64.0
+anchors_preset = -1
+anchor_right = 0.180556
+anchor_bottom = 0.0694444
+offset_left = 264.0
+offset_top = 8.0
+offset_right = 392.0
+offset_bottom = 35.0
 theme_override_styles/background = SubResource("StyleBoxFlat_7u753")
 theme_override_styles/fill = SubResource("StyleBoxFlat_oswqy")
 max_value = 10.0
