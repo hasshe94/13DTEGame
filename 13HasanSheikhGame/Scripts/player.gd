@@ -38,6 +38,7 @@ func health():
 
 
 func hit():
+	if dead:return
 	hp -= 11
 	health_bar.value = hp
 	if hp <=0:

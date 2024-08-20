@@ -30,7 +30,7 @@ func handle_selection(_current_selection):
 		GameManager.score = 0
 		#queue_free()
 	elif _current_selection == 1:
-		get_tree().change_scene_to_file("res://Scenes/about.tscn")
+		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 	elif _current_selection == 2:
 		get_tree().quit()
 

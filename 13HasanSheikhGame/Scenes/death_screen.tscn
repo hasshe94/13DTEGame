@@ -1,15 +1,61 @@
-[gd_scene load_steps=3 format=3 uid="uid://bofds3g5sjauv"]
+[gd_scene load_steps=3 format=3 uid="uid://s5iyr6nmx5ua"]
 
-[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_k7cm8"]
 [ext_resource type="AudioStream" uid="uid://c5akum00ogh67" path="res://Assets/Audio/midnight-forest-184304.mp3" id="2_stk14"]
 
-[node name="MainMenu" type="MarginContainer"]
+[sub_resource type="GDScript" id="GDScript_i37dh"]
+script/source = "extends MarginContainer
+
+const first_scene = preload(\"res://Scenes/world.tscn\")
+
+@onready var selector_one = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer/selector_one
+@onready var selector_two = $CenterContainer/VBoxContainer/CenterContainer3/VBoxContainer/CenterContainer/HBoxContainer/selector_two
+@onready var selector_three=$CenterContainer/VBoxContainer/CenterContainer4/VBoxContainer/CenterContainer/HBoxContainer/selector_three
+
+var current_selection = 0
+
+func _ready():
+	get_tree().paused = false
+	set_current_selection(0)
+	
+func _process(_delta):
+	if Input.is_action_just_pressed(\"down\") and current_selection < 2:
+		current_selection += 1
+		set_current_selection(current_selection)
+	elif Input.is_action_just_pressed(\"jump\") and current_selection > 0:
+		current_selection -= 1
+		set_current_selection(current_selection)
+	elif Input.is_action_just_pressed(\"ui_accept\"):
+		handle_selection(current_selection)
+
+func handle_selection(_current_selection):
+	if _current_selection == 0:
+		GameManager.reset
+		get_tree().change_scene_to_file(\"res://Scenes/main_menu.tscn\")
+		GameManager.score = 0
+		#queue_free()
+	elif _current_selection == 1:
+		get_tree().quit()
+
+
+func set_current_selection(_current_selection):
+	selector_one.text = \"\"
+	selector_two.text = \"\"
+	selector_three.text = \"\"
+	if _current_selection == 0:
+		selector_one.text = \">\"
+	elif _current_selection == 1:
+		selector_two.text = \">\"
+	elif _current_selection == 2:
+		selector_three.text = \">\"
+"
+
+[node name="DeathScreen" type="MarginContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_k7cm8")
+script = SubResource("GDScript_i37dh")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 2
@@ -27,11 +73,11 @@ layout_mode = 2
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
 theme_override_constants/shadow_offset_x = 4
 theme_override_constants/shadow_offset_y = 4
 theme_override_constants/outline_size = 1
 theme_override_constants/shadow_outline_size = 1
-theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 54
 text = "You Died!
 "
@@ -51,23 +97,23 @@ layout_mode = 2
 [node name="selector_one" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 0
 theme_override_constants/shadow_outline_size = 3
-theme_override_constants/line_spacing = 0
 text = ">"
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
 theme_override_constants/shadow_offset_x = 4
 theme_override_constants/shadow_offset_y = 4
 theme_override_constants/outline_size = 1
 theme_override_constants/shadow_outline_size = 1
-theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 36
-text = "Restart"
+text = "Main Menu"
 
 [node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -84,56 +130,23 @@ layout_mode = 2
 [node name="selector_two" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer3/VBoxContainer/CenterContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 0
 theme_override_constants/shadow_outline_size = 3
-theme_override_constants/line_spacing = 0
 text = ">"
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer3/VBoxContainer/CenterContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
 theme_override_constants/shadow_offset_x = 4
 theme_override_constants/shadow_offset_y = 4
 theme_override_constants/outline_size = 1
 theme_override_constants/shadow_outline_size = 1
-theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 36
-text = "About"
-
-[node name="CenterContainer4" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer4"]
-layout_mode = 2
-
-[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer4/VBoxContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer4/VBoxContainer/CenterContainer"]
-layout_mode = 2
-
-[node name="selector_three" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer4/VBoxContainer/CenterContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/outline_size = 0
-theme_override_constants/shadow_outline_size = 3
-theme_override_constants/line_spacing = 0
-text = ">"
-
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer4/VBoxContainer/CenterContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 4
-theme_override_constants/shadow_offset_y = 4
-theme_override_constants/outline_size = 1
-theme_override_constants/shadow_outline_size = 1
-theme_override_constants/line_spacing = 0
-theme_override_font_sizes/font_size = 36
-text = "Exit"
+text = "Quit"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_stk14")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b2qwglcjcwbv"]
+[gd_scene load_steps=22 format=3 uid="uid://b2qwglcjcwbv"]
 
 [ext_resource type="PackedScene" uid="uid://bd6485lwlxrop" path="res://Scenes/player.tscn" id="1_lqwun"]
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_vexoy"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://brnao2msg88kb" path="res://Assets/Free Pixel Art Forest/Free Pixel Art Forest/PNG/Background layers/Layer_0008_3.png" id="4_sffep"]
 [ext_resource type="Texture2D" uid="uid://cql5v8qypotrp" path="res://Assets/Free Pixel Art Forest/Free Pixel Art Forest/PNG/Background layers/Layer_0006_4.png" id="5_a6mck"]
 [ext_resource type="Texture2D" uid="uid://dalff1euyufew" path="res://Assets/Free Pixel Art Forest/Free Pixel Art Forest/PNG/Background layers/Layer_0005_5.png" id="6_g405i"]
-[ext_resource type="PackedScene" uid="uid://cbko5oa0uqbvi" path="res://Scenes/artifact.tscn" id="7_jmaeo"]
 [ext_resource type="Texture2D" uid="uid://cw4p1cpknkl8j" path="res://Assets/Free Pixel Art Forest/Free Pixel Art Forest/PNG/Background layers/Layer_0003_6.png" id="7_o86nw"]
 [ext_resource type="Script" path="res://Scripts/Label.gd" id="8_6ojdt"]
 [ext_resource type="Texture2D" uid="uid://cyl1w3j01u1yg" path="res://Assets/Free Pixel Art Forest/Free Pixel Art Forest/PNG/Background layers/Layer_0002_7.png" id="8_c2eng"]
@@ -969,6 +968,3 @@ position = Vector2(96, 0)
 
 [node name="deathwater" parent="Death Water/deathwater6/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
 position = Vector2(16, 0)
-
-[node name="Artifact" parent="." instance=ExtResource("7_jmaeo")]
-position = Vector2(232, 24)

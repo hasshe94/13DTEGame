@@ -7,7 +7,9 @@ func collected():
 	get_tree().current_scene.add_child(new_vanish_object)
 	new_vanish_object.global_position = global_position
 	GameManager.score += 1
-	
+
+func reset():
+	GameManager.score = 0
 
 
 

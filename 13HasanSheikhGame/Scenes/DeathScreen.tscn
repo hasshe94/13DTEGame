@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://nvx3w0ee4nt7"]
 
-[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_xkkga"]
+[ext_resource type="Script" path="res://Scripts/death_screen.gd" id="1_atset"]
 [ext_resource type="AudioStream" uid="uid://c5akum00ogh67" path="res://Assets/Audio/midnight-forest-184304.mp3" id="2_4qnpv"]
 
 [node name="DeathScreen" type="MarginContainer"]
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_xkkga")
+script = ExtResource("1_atset")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 2
