@@ -39,7 +39,7 @@ func health():
 
 func hit():
 	if dead:return
-	hp -= 11
+	hp -= 2
 	health_bar.value = hp
 	if hp <=0:
 		animation_player.play("die")
@@ -48,15 +48,16 @@ func hit():
 		await animation_player.animation_finished
 		get_tree().change_scene_to_file("res://Scenes/DeathScreen.tscn")
 
-#func death():
-	#hp = 0
-	#health_bar.value = hp
-	#if hp <=0:
-		#animation_player.play("die")
-		#sfx_death.play()
-		#dead = true
-		#await animation_player.animation_finished
-		#get_tree().change_scene("res://Scenes/DeathScreen.tscn")
+func death():
+	if dead:return
+	hp -=10
+	health_bar.value = hp
+	if hp <=0:
+		animation_player.play("die")
+		sfx_death.play()
+		dead = true
+		await animation_player.animation_finished
+		get_tree().change_scene_to_file("res://Scenes/DeathScreen.tscn")
 
 #func die():
 	#anim_state=state.DIE
@@ -93,8 +94,10 @@ func update_animation(direction):
 
 	if direction > 0:
 		animator.flip_h = false
+		$AttackArea.flip_h = false
 	elif direction < 0:
 		animator.flip_h = true
+		$AttackArea.flip_h = true
 	match anim_state:
 		state.IDLE:
 			animation_player.play("idle")
@@ -115,7 +118,13 @@ func update_animation(direction):
 		state.DIE:
 			animation_player.play("die")
 
-		
+func attack():
+	var overlappng_objects = $AttackArea.get_overlapping_areas()
+	
+	for area in overlappng_objects:
+		var parent = area.get_present()
+		print(parent.queue_free)
+	
 #func attack():
 	#if not is_attacking:
 		#is_attacking = true
@@ -195,6 +204,8 @@ func _on_hurt_box_area_entered(area):
 		hit()
 	elif area.is_in_group("health"):
 		health()
+	elif area.is_in_group("death"):
+		death()
 
 
 

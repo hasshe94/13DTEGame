@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://co8clyyph5s5g"]
+
+[ext_resource type="Texture2D" uid="uid://bxwpxrv5givu5" path="res://Assets/Treasure Hunters/Treasure Hunters/Palm Tree Island/Sprites/Objects/Spikes/Spikes.png" id="1_3trrg"]
+[ext_resource type="Script" path="res://Scripts/falling_spikes.gd" id="1_jhkjo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6xxs"]
+size = Vector2(28, 111)
+
+[node name="FallingSpikes" type="Node2D"]
+script = ExtResource("1_jhkjo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.14159
+texture = ExtResource("1_3trrg")
+
+[node name="HitBox" type="Area2D" parent="." groups=["death"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox"]
+polygon = PackedVector2Array(-12, -16, 13, -16, 16, -11, 14, -7, 5, -1, -4, -3, -11, 0, -15, -7)
+
+[node name="PlayerDetect" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetect"]
+position = Vector2(0, 40)
+shape = SubResource("RectangleShape2D_k6xxs")
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
+[connection signal="area_entered" from="PlayerDetect" to="." method="_on_player_detect_area_entered"]
