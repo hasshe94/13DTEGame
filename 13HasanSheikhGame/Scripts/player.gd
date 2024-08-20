@@ -36,8 +36,9 @@ func health():
 	hp += 1
 	health_bar.value = hp
 
+
 func hit():
-	hp -= 1
+	hp -= 11
 	health_bar.value = hp
 	if hp <=0:
 		animation_player.play("die")
@@ -45,6 +46,16 @@ func hit():
 		dead = true
 		await animation_player.animation_finished
 		get_tree().change_scene_to_file("res://Scenes/DeathScreen.tscn")
+
+#func death():
+	#hp = 0
+	#health_bar.value = hp
+	#if hp <=0:
+		#animation_player.play("die")
+		#sfx_death.play()
+		#dead = true
+		#await animation_player.animation_finished
+		#get_tree().change_scene("res://Scenes/DeathScreen.tscn")
 
 #func die():
 	#anim_state=state.DIE
@@ -183,6 +194,7 @@ func _on_hurt_box_area_entered(area):
 		hit()
 	elif area.is_in_group("health"):
 		health()
+
 
 
 
