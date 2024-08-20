@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/opposum.gd" id="1_vt0bs"]
 [ext_resource type="Texture2D" uid="uid://5d0lvufihhjx" path="res://Assets/Enemy/oposum.png" id="2_23nnf"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_x0d2l"]
-radius = 14.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iq3w3"]
+size = Vector2(20, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2up2i"]
 atlas = ExtResource("2_23nnf")
@@ -60,10 +60,11 @@ animations = [{
 script = ExtResource("1_vt0bs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["hitBox"]]
-shape = SubResource("CircleShape2D_x0d2l")
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_iq3w3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(3, -4)
+position = Vector2(3, -8)
 sprite_frames = SubResource("SpriteFrames_v2sw5")
 autoplay = "default"
 

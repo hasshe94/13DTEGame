@@ -8,6 +8,7 @@ size = Vector2(28, 111)
 
 [node name="FallingSpikes" type="Node2D"]
 script = ExtResource("1_jhkjo")
+speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 3.14159
@@ -25,5 +26,6 @@ position = Vector2(0, 40)
 shape = SubResource("RectangleShape2D_k6xxs")
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="area_shape_entered" from="HitBox" to="." method="_on_hit_box_area_shape_entered"]
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
 [connection signal="area_entered" from="PlayerDetect" to="." method="_on_player_detect_area_entered"]

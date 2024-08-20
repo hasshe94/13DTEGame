@@ -42,7 +42,6 @@ animations = [{
 }]
 
 [node name="Eagle" type="Area2D" groups=["hurt"]]
-monitorable = false
 script = ExtResource("1_12gh8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["hitBox"]]

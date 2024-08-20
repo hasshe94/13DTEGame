@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bd6485lwlxrop"]
+[gd_scene load_steps=43 format=3 uid="uid://bd6485lwlxrop"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_at6ts"]
 [ext_resource type="Texture2D" uid="uid://da8gy2k0bqn1x" path="res://Assets/Treasure Hunters/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/16-Attack 2/Attack 2 01.png" id="2_msmhm"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://wcuumlupu8p2" path="res://Assets/Treasure Hunters/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 04.png" id="22_gxcm5"]
 [ext_resource type="Texture2D" uid="uid://cm40ymmuk4vlw" path="res://Assets/Treasure Hunters/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 05.png" id="23_mpwr7"]
 [ext_resource type="Texture2D" uid="uid://cwh6y63npp2ht" path="res://Assets/Treasure Hunters/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 06.png" id="24_0y87g"]
+[ext_resource type="AudioStream" uid="uid://ct101ymwuu0l8" path="res://Assets/Audio/SFX/male_hurt7-48124.mp3" id="26_drbem"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kj60l"]
 animations = [{
@@ -531,6 +532,9 @@ shape = SubResource("CapsuleShape2D_yp7aq")
 [node name="sfx_jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_w602f")
 volume_db = 2.0
+
+[node name="sfx_hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_drbem")
 
 [node name="sfx_death" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_lgj5y")

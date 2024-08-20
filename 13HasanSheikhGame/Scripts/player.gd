@@ -2,6 +2,7 @@ extends CharacterBody2D
 var is_attacking = false
 @onready var sfx_jump = $sfx_jump
 @onready var sfx_death = $sfx_death
+@onready var sfx_hurt = $sfx_hurt
 
 signal healthChanged
 @export var speed = 300.0
@@ -41,6 +42,7 @@ func hit():
 	if dead:return
 	hp -= 2
 	health_bar.value = hp
+	sfx_hurt.play()
 	if hp <=0:
 		animation_player.play("die")
 		sfx_death.play()
@@ -94,10 +96,8 @@ func update_animation(direction):
 
 	if direction > 0:
 		animator.flip_h = false
-		$AttackArea.flip_h = false
 	elif direction < 0:
 		animator.flip_h = true
-		$AttackArea.flip_h = true
 	match anim_state:
 		state.IDLE:
 			animation_player.play("idle")

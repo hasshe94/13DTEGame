@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://goboytbe8q45"
+path="res://.godot/imported/item-equip-6904 (1).mp3-b64e6e8c060d49885b03e675e0b24a0a.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/item-equip-6904 (1).mp3"
+dest_files=["res://.godot/imported/item-equip-6904 (1).mp3-b64e6e8c060d49885b03e675e0b24a0a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

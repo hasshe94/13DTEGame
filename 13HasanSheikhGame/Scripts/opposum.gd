@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var direction = 1
+var direction = 0.5
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
 

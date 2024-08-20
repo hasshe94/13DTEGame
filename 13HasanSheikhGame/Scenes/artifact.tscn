@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cbko5oa0uqbvi"]
+[gd_scene load_steps=13 format=3 uid="uid://cbko5oa0uqbvi"]
 
 [ext_resource type="Script" path="res://Scripts/artifact.gd" id="1_32qo2"]
 [ext_resource type="Texture2D" uid="uid://d3ji7yh0mfv8m" path="res://Assets/Pickups/gem.png" id="2_ba8yb"]
+[ext_resource type="AudioStream" uid="uid://goboytbe8q45" path="res://Assets/Audio/SFX/item-equip-6904 (1).mp3" id="3_03a61"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f178m"]
 atlas = ExtResource("2_ba8yb")
@@ -97,5 +98,8 @@ libraries = {
 "": SubResource("AnimationLibrary_vcqyc")
 }
 autoplay = "artifact"
+
+[node name="sfx_collected" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_03a61")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
