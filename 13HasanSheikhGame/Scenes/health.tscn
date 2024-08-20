@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://c0l4iskcmywi7"]
+[gd_scene load_steps=13 format=3 uid="uid://c0l4iskcmywi7"]
 
 [ext_resource type="Script" path="res://Scripts/Health.gd" id="1_hmnbd"]
 [ext_resource type="Texture2D" uid="uid://c0uhi48tdfkqr" path="res://Assets/Animation Pack/Crystal.png" id="2_ut6e8"]
-[ext_resource type="AudioStream" uid="uid://goboytbe8q45" path="res://Assets/Audio/SFX/item-equip-6904 (1).mp3" id="3_4qs0h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_og2t1"]
 radius = 6.08276
@@ -106,8 +105,5 @@ libraries = {
 "": SubResource("AnimationLibrary_r3rvf")
 }
 autoplay = "default"
-
-[node name="sfx_collected" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_4qs0h")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dg61w8fuex2ut"]
+[gd_scene load_steps=11 format=3 uid="uid://dg61w8fuex2ut"]
 
 [ext_resource type="Texture2D" uid="uid://dmxtrl3j6foon" path="res://Assets/Pickups/item-feedback.png" id="1_o64d0"]
+[ext_resource type="AudioStream" uid="uid://goboytbe8q45" path="res://Assets/Audio/SFX/item-equip-6904 (1).mp3" id="2_4nkv3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4ewi"]
 atlas = ExtResource("1_o64d0")
@@ -102,3 +103,7 @@ libraries = {
 "": SubResource("AnimationLibrary_voxos")
 }
 autoplay = "default"
+
+[node name="sfx_collected" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_4nkv3")
+autoplay = true
