@@ -1709,6 +1709,39 @@ position = Vector2(4416, 798)
 position = Vector2(384, 792)
 rotation = -3.14159
 
+[node name="SpikeTrap3" parent="SpikeTrap" instance=ExtResource("15_akfch")]
+position = Vector2(167, 837)
+rotation = -1.5708
+
+[node name="SpikeTrap4" parent="SpikeTrap" instance=ExtResource("15_akfch")]
+position = Vector2(332, 694)
+
+[node name="SpikeTrap5" parent="SpikeTrap" instance=ExtResource("15_akfch")]
+position = Vector2(373, 695)
+
+[node name="SpikeTrap6" parent="SpikeTrap" instance=ExtResource("15_akfch")]
+position = Vector2(560, 680)
+rotation = 1.5708
+
+[node name="SpikeTrap7" parent="SpikeTrap" instance=ExtResource("15_akfch")]
+position = Vector2(664, 648)
+rotation = 1.5708
+
+[node name="SpikeTrap8" parent="SpikeTrap" instance=ExtResource("15_akfch")]
+position = Vector2(640, 696)
+
+[node name="SpikeTrap9" parent="SpikeTrap" instance=ExtResource("15_akfch")]
+position = Vector2(536, 760)
+rotation = 3.14159
+
+[node name="SpikeTrap10" parent="SpikeTrap" instance=ExtResource("15_akfch")]
+position = Vector2(880, 776)
+rotation = 3.14159
+
+[node name="SpikeTrap11" parent="SpikeTrap" instance=ExtResource("15_akfch")]
+position = Vector2(1144, 712)
+rotation = 3.14159
+
 [node name="BackgroundObjects" type="Node2D" parent="."]
 
 [node name="1" type="Sprite2D" parent="BackgroundObjects"]
@@ -2065,36 +2098,3 @@ position = Vector2(4472, 789)
 
 [node name="Artifact15" parent="Artifacts" instance=ExtResource("7_jmaeo")]
 position = Vector2(5197, 774)
-
-[node name="SpikeTrap2" parent="." instance=ExtResource("15_akfch")]
-position = Vector2(167, 837)
-rotation = 4.71239
-
-[node name="SpikeTrap3" parent="." instance=ExtResource("15_akfch")]
-position = Vector2(332, 694)
-
-[node name="SpikeTrap4" parent="." instance=ExtResource("15_akfch")]
-position = Vector2(373, 695)
-
-[node name="SpikeTrap5" parent="." instance=ExtResource("15_akfch")]
-position = Vector2(560, 680)
-rotation = 1.5708
-
-[node name="SpikeTrap6" parent="." instance=ExtResource("15_akfch")]
-position = Vector2(664, 648)
-rotation = 1.5708
-
-[node name="SpikeTrap7" parent="." instance=ExtResource("15_akfch")]
-position = Vector2(640, 696)
-
-[node name="SpikeTrap8" parent="." instance=ExtResource("15_akfch")]
-position = Vector2(536, 760)
-rotation = 3.14159
-
-[node name="SpikeTrap9" parent="." instance=ExtResource("15_akfch")]
-position = Vector2(880, 776)
-rotation = 3.14159
-
-[node name="SpikeTrap10" parent="." instance=ExtResource("15_akfch")]
-position = Vector2(1144, 712)
-rotation = 3.14159
