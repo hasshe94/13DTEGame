@@ -94,13 +94,13 @@ _data = {
 "default": SubResource("Animation_8p51s")
 }
 
-[node name="SpikeTrap" type="Area2D" groups=["death"]]
+[node name="SpikeTrap" type="Area2D" groups=["hurt"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0r307")
-frame = 6
+frame_progress = 0.496368
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["hitBox"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1kasq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
