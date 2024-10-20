@@ -34,7 +34,7 @@ func _process(delta):
 	
 
 func health():
-	hp += 1
+	hp += 3
 	health_bar.value = hp
 
 
