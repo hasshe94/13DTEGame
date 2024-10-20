@@ -71,7 +71,6 @@ func death():
 	
 
 
-
 func update_state():
 	
 	if anim_state == state.ATTACK:
@@ -79,6 +78,14 @@ func update_state():
 		print("done")
 		anim_state = state.IDLE
 		return
+		
+func attacking():
+	var overlapping_objects = $AttackArea.get_overlapping_areas()
+	for area in overlapping_objects:
+		if area.is_in_group("enemies"):  # Check if the object is an enemy
+			area.get_parent().die()  # Assuming the enemy has a `die` function
+			print("Enemy defeated")
+
 	if anim_state == state.HURT:
 		return
 	if is_on_floor():
@@ -91,6 +98,7 @@ func update_state():
 			anim_state = state.JUMPUP
 		else:
 			anim_state = state.JUMPDOWN
+
 
 func update_animation(direction):
 
@@ -138,6 +146,11 @@ func _physics_process(delta):
 	if dead : return
 	if not is_on_floor():
 		velocity.y += gravity * delta
+	if Input.is_action_just_pressed("attack") and is_on_floor():
+		anim_state = state.ATTACK
+		attacking()  # Call the attack function immediately or based on animation timing
+
+
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():

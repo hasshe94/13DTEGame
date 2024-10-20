@@ -6,7 +6,7 @@ var direction = 1
 func _ready():
 	$Timer.wait_time = flip_time
 
-
+var hp = 5
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	translate(Vector2.RIGHT * direction)
@@ -15,4 +15,13 @@ func _process(delta):
 
 func _on_timer_timeout():
 	direction *= -1
-	
+
+
+func _on_hit(damage):
+	hp -= damage
+	if hp <= 0:
+		die()
+
+func die():
+	#$AnimationPlayer.play("die")  # Assuming you have a death animation
+	queue_free()  # Remove the enemy from the scene after death
