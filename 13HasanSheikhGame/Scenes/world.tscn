@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://b2qwglcjcwbv"]
+[gd_scene load_steps=61 format=3 uid="uid://b2qwglcjcwbv"]
 
 [ext_resource type="PackedScene" uid="uid://bd6485lwlxrop" path="res://Scenes/player.tscn" id="1_lqwun"]
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_vexoy"]
@@ -50,8 +50,12 @@
 [ext_resource type="Texture2D" uid="uid://dsabhxkqqvp8h" path="res://Assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/08.png" id="47_mtaks"]
 [ext_resource type="Texture2D" uid="uid://d3nqfc8q8xi7n" path="res://Assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Green Bottle/04.png" id="49_85ime"]
 [ext_resource type="Texture2D" uid="uid://b7ugkbq8eiqcy" path="res://Assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Skull Effect/02.png" id="50_k826b"]
+[ext_resource type="Texture2D" uid="uid://hygl0gw38ika" path="res://Assets/Treasure Hunters/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/01.png" id="51_2a3n1"]
 [ext_resource type="Texture2D" uid="uid://d0n4s6kucsv2c" path="res://Assets/platformer_metroidvania asset pack v1.01/platformer_metroidvania asset pack v1.01/miscellaneous sprites/vase.png" id="51_bqen5"]
+[ext_resource type="Texture2D" uid="uid://flwg5hfqbei7" path="res://Assets/Treasure Hunters/Treasure Hunters/Pirate Ship/Sprites/Decorations/Candle/Candle/01.png" id="52_5haag"]
 [ext_resource type="Texture2D" uid="uid://dj3ybvg4quy5c" path="res://Assets/platformer_metroidvania asset pack v1.01/platformer_metroidvania asset pack v1.01/miscellaneous sprites/orb.png" id="52_lry7h"]
+[ext_resource type="Texture2D" uid="uid://cpieyh7dqbmy6" path="res://Assets/Treasure Hunters/Treasure Hunters/Pirate Ship/Sprites/Decorations/Barrels and Bottles/01.png" id="53_h3owg"]
+[ext_resource type="Texture2D" uid="uid://cu74lsb26l6it" path="res://Assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Green Bottle/01.png" id="54_em2r7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7u753"]
 
@@ -443,10 +447,10 @@ metadata/_edit_use_anchors_ = true
 [node name="ParallaxLayer10" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer10"]
-offset_left = -1.0
-offset_top = -523.0
-offset_right = 2825.0
-offset_bottom = 629.0
+offset_left = -536.0
+offset_top = -600.0
+offset_right = 2290.0
+offset_bottom = 552.0
 scale = Vector2(2, 2)
 texture = ExtResource("11_j8h46")
 stretch_mode = 1
@@ -826,6 +830,16 @@ texture = ExtResource("30_e7kao")
 position = Vector2(95.5, 714)
 scale = Vector2(0.947917, 1)
 texture = ExtResource("30_e7kao")
+
+[node name="BigClouds3" type="Sprite2D" parent="BackgroundObjects"]
+position = Vector2(3566, 200)
+scale = Vector2(2, 2)
+texture = ExtResource("41_vhrmo")
+
+[node name="ChestClose03" type="Sprite2D" parent="BackgroundObjects"]
+position = Vector2(5200, 768)
+scale = Vector2(1.125, 1.22857)
+texture = ExtResource("34_8d4pd")
 
 [node name="Death Water" type="Node2D" parent="."]
 position = Vector2(0, 760)
@@ -2016,6 +2030,62 @@ position = Vector2(2826, 463)
 [node name="Eagle21" parent="Animals" instance=ExtResource("9_318jh")]
 position = Vector2(3307, 417)
 
+[node name="Eagle22" parent="Animals" instance=ExtResource("9_318jh")]
+position = Vector2(2976, 904)
+
+[node name="Eagle23" parent="Animals" instance=ExtResource("9_318jh")]
+position = Vector2(3232, 808)
+
+[node name="Eagle24" parent="Animals" instance=ExtResource("9_318jh")]
+position = Vector2(3992, 640)
+
+[node name="Eagle25" parent="Animals" instance=ExtResource("9_318jh")]
+position = Vector2(4104, 440)
+
+[node name="Eagle26" parent="Animals" instance=ExtResource("9_318jh")]
+position = Vector2(4824, 680)
+
+[node name="Eagle27" parent="Animals" instance=ExtResource("9_318jh")]
+position = Vector2(3264, 680)
+
+[node name="Eagle28" parent="Animals" instance=ExtResource("9_318jh")]
+position = Vector2(2456, 512)
+
+[node name="Eagle29" parent="Animals" instance=ExtResource("9_318jh")]
+position = Vector2(1488, 512)
+
+[node name="Eagle30" parent="Animals" instance=ExtResource("9_318jh")]
+position = Vector2(1048, 712)
+
+[node name="Opposum7" parent="Animals" instance=ExtResource("10_6hpao")]
+position = Vector2(3160, 696)
+
+[node name="Opposum8" parent="Animals" instance=ExtResource("10_6hpao")]
+position = Vector2(2408, 544)
+
+[node name="Opposum9" parent="Animals" instance=ExtResource("10_6hpao")]
+position = Vector2(3568, 544)
+
+[node name="01" type="Sprite2D" parent="Animals"]
+position = Vector2(5168, 704)
+texture = ExtResource("51_2a3n1")
+
+[node name="02" type="Sprite2D" parent="Animals"]
+position = Vector2(5168, 648)
+texture = ExtResource("52_5haag")
+
+[node name="03" type="Sprite2D" parent="Animals"]
+position = Vector2(5232, 776)
+texture = ExtResource("53_h3owg")
+
+[node name="04" type="Sprite2D" parent="Animals"]
+position = Vector2(5232, 824)
+texture = ExtResource("50_k826b")
+
+[node name="05" type="Sprite2D" parent="Animals"]
+position = Vector2(5272, 784)
+texture = ExtResource("54_em2r7")
+
 [node name="SpikeTrap" type="Node2D" parent="."]
 
 [node name="SpikeTrap2" parent="SpikeTrap" instance=ExtResource("15_akfch")]
@@ -2184,31 +2254,4 @@ position = Vector2(3918, 641)
 position = Vector2(4472, 789)
 
 [node name="Artifact15" parent="Artifacts" instance=ExtResource("7_jmaeo")]
-position = Vector2(5197, 774)
-
-[node name="Eagle" parent="." instance=ExtResource("9_318jh")]
-position = Vector2(2976, 904)
-
-[node name="Eagle2" parent="." instance=ExtResource("9_318jh")]
-position = Vector2(3232, 808)
-
-[node name="Eagle3" parent="." instance=ExtResource("9_318jh")]
-position = Vector2(3992, 640)
-
-[node name="Eagle4" parent="." instance=ExtResource("9_318jh")]
-position = Vector2(4104, 440)
-
-[node name="Eagle5" parent="." instance=ExtResource("9_318jh")]
-position = Vector2(4824, 680)
-
-[node name="Eagle6" parent="." instance=ExtResource("9_318jh")]
-position = Vector2(3264, 680)
-
-[node name="Eagle7" parent="." instance=ExtResource("9_318jh")]
-position = Vector2(2456, 512)
-
-[node name="Eagle8" parent="." instance=ExtResource("9_318jh")]
-position = Vector2(1488, 512)
-
-[node name="Eagle9" parent="." instance=ExtResource("9_318jh")]
-position = Vector2(1048, 712)
+position = Vector2(5248, 784)
