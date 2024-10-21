@@ -59,7 +59,7 @@ animations = [{
 [node name="Opposum" type="CharacterBody2D" groups=["hurt"]]
 script = ExtResource("1_vt0bs")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["hitBox"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["hurt"]]
 position = Vector2(0, -4.5)
 shape = SubResource("RectangleShape2D_iq3w3")
 
