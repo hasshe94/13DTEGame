@@ -1,6 +1,6 @@
 extends Area2D
 @export var flip_time = 2
-
+@onready var sfx_deathh = $sfx_deathh
 var direction = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,5 +23,7 @@ func _on_hit(damage):
 		die()
 
 func die():
-	#$AnimationPlayer.play("die")  # Assuming you have a death animation
-	queue_free()  # Remove the enemy from the scene after death
+	sfx_deathh.play()
+	await sfx_deathh.finished
+	await $AnimationPlayer.play("death")  
+	queue_free()  

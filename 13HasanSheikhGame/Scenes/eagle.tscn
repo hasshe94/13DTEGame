@@ -1,7 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://ro0sg2bc8dvd"]
+[gd_scene load_steps=17 format=3 uid="uid://ro0sg2bc8dvd"]
 
 [ext_resource type="Script" path="res://Scripts/eagle.gd" id="1_12gh8"]
 [ext_resource type="Texture2D" uid="uid://prb63yr3po4r" path="res://Assets/Enemy/eagle-attack.png" id="2_c720r"]
+[ext_resource type="Texture2D" uid="uid://hsjohhoxv8rg" path="res://Assets/Enemy/enemy-death-1.png" id="2_qqyfu"]
+[ext_resource type="Texture2D" uid="uid://crxl263dutvvj" path="res://Assets/Enemy/enemy-death-2.png" id="3_8w1j0"]
+[ext_resource type="Texture2D" uid="uid://d14udankghsps" path="res://Assets/Enemy/enemy-death-3.png" id="4_pjii2"]
+[ext_resource type="Texture2D" uid="uid://csl5af8dt38kr" path="res://Assets/Enemy/enemy-death-4.png" id="5_sqghb"]
+[ext_resource type="AudioStream" uid="uid://bf4dho01nm0wk" path="res://Assets/Audio/SFX/sword-sound-effect-1-234987.mp3" id="7_i1cjv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6ljo7"]
 radius = 15.1327
@@ -26,6 +31,23 @@ region = Rect2(120, 0, 40, 41)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_qqyfu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8w1j0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pjii2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sqghb")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_7jnfj")
 }, {
 "duration": 1.0,
@@ -42,6 +64,68 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_psnsk"]
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["death"]
+}
+
+[sub_resource type="Animation" id="Animation_m7fkm"]
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["default"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r3ybi"]
+_data = {
+"death": SubResource("Animation_psnsk"),
+"default": SubResource("Animation_m7fkm")
+}
+
 [node name="Eagle" type="Area2D" groups=["enemies", "hurt"]]
 script = ExtResource("1_12gh8")
 
@@ -52,11 +136,22 @@ shape = SubResource("CircleShape2D_6ljo7")
 position = Vector2(1, 0)
 scale = Vector2(0.8, 0.768293)
 sprite_frames = SubResource("SpriteFrames_q11gu")
+animation = &"death"
 autoplay = "default"
-frame_progress = 0.348327
+frame_progress = 0.422277
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_r3ybi")
+}
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="sfx_deathh" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_i1cjv")
+bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

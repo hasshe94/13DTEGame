@@ -12,7 +12,7 @@ signal healthChanged
 var dead = false
 var hp = 10
 @onready var health_bar = %HealthBar
-
+@onready var sfx_collectedd = $sfx_collectedd
 #@export var maxHealth = 3
 #@onready var currentHealth: int = maxHealth
 
@@ -36,6 +36,7 @@ func _process(delta):
 func health():
 	hp += 3
 	health_bar.value = hp
+	sfx_collectedd.play()
 
 
 func hit():
@@ -52,7 +53,7 @@ func hit():
 
 func death():
 	if dead:return
-	hp -=10
+	hp -=1000000000
 	health_bar.value = hp
 	if hp <=0:
 		animation_player.play("die")

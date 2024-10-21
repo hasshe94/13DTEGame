@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var sfx_collected = $sfx_collected
+
 
 
 func _ready():
@@ -8,7 +8,6 @@ func _ready():
 		get_tree().change_scene_to_file("res://Scenes/about.tscn")
 
 func collected():
-	sfx_collected.play()
 	var vanish = preload("res://Scenes/vanish.tscn")
 	var new_vanish_object = vanish.instantiate()
 	get_tree().current_scene.add_child(new_vanish_object)
