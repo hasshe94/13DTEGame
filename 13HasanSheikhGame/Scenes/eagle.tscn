@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://prb63yr3po4r" path="res://Assets/Enemy/eagle-attack.png" id="2_c720r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6ljo7"]
+radius = 15.1327
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7jnfj"]
 atlas = ExtResource("2_c720r")
@@ -48,6 +49,8 @@ script = ExtResource("1_12gh8")
 shape = SubResource("CircleShape2D_6ljo7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(0.8, 0.768293)
 sprite_frames = SubResource("SpriteFrames_q11gu")
 autoplay = "default"
 frame_progress = 0.348327

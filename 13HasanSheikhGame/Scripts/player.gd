@@ -72,7 +72,6 @@ func death():
 
 
 func update_state():
-	
 	if anim_state == state.ATTACK:
 		await animation_player.animation_finished
 		print("done")
@@ -86,8 +85,18 @@ func attacking():
 			area.get_parent().die()  # Assuming the enemy has a `die` function
 			print("Enemy defeated")
 
+
+
+
 	if anim_state == state.HURT:
 		return
+
+	if Input.is_action_just_pressed("attack"):
+		anim_state = state.ATTACK
+		return  # Prevent state from being overridden
+		
+		
+		
 	if is_on_floor():
 		if velocity == Vector2.ZERO:
 			anim_state = state.IDLE
@@ -154,12 +163,12 @@ func _physics_process(delta):
 
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump"):
 		velocity.y = jump_velocity
 		sfx_jump.play()
 
 		
-	if Input.is_action_just_pressed("attack") and is_on_floor():
+	if Input.is_action_just_pressed("attack"):
 		anim_state = state.ATTACK
 		attack()
 
