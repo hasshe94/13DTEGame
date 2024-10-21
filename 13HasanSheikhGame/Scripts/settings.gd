@@ -2,18 +2,16 @@ extends Control
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func _ready():
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(delta: float):
 	pass
 
 
-func _on_volume_value_changed(value):
-	AudioServer.set_bus_volume_db(0,value)
-
-
-func _on_mute_toggled(toggled_on):
-	pass # Replace with function body.
+func _on_confirm_pressed():
+	AudioServer.set_bus_volume_db(0, linear_to_db($AudioOptions/VBoxContainer/MasterSlider.value))
+	AudioServer.set_bus_volume_db(1, linear_to_db($AudioOptions/VBoxContainer/SFXSlider.value))
+	AudioServer.set_bus_volume_db(2, linear_to_db($AudioOptions/VBoxContainer/MusicSlider.value))

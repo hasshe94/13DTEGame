@@ -128,10 +128,13 @@ func update_animation(direction):
 
 func attack():
 	var overlappng_objects = $AttackArea.get_overlapping_areas()
+
 	
 	for area in overlappng_objects:
-		var parent = area.get_present()
-		print(parent.queue_free)
+		
+		area.queue_free()
+	
+
 	
 #func attack():
 	#if not is_attacking:
@@ -146,9 +149,7 @@ func _physics_process(delta):
 	if dead : return
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	if Input.is_action_just_pressed("attack") and is_on_floor():
-		anim_state = state.ATTACK
-		attacking()  # Call the attack function immediately or based on animation timing
+
 
 
 
@@ -160,6 +161,7 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("attack") and is_on_floor():
 		anim_state = state.ATTACK
+		attack()
 
 	if Input.is_action_just_pressed("crouch") and is_on_floor():
 		anim_state = state.CROUCH
@@ -224,3 +226,11 @@ func _on_hurt_box_area_entered(area):
 
 
 	
+
+
+func _on_attack_area_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_attack_area_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
