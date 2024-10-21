@@ -1,8 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhxj656g2keaa"]
+[gd_scene load_steps=4 format=3 uid="uid://cpdxpuxhdknpe"]
 
 [ext_resource type="Script" path="res://Scripts/options_menu.gd" id="1_bp3ig"]
-[ext_resource type="Script" path="res://Scripts/audio_options.gd" id="2_3s234"]
 [ext_resource type="AudioStream" uid="uid://c5akum00ogh67" path="res://Assets/Audio/midnight-forest-184304.mp3" id="3_pv4th"]
+
+[sub_resource type="GDScript" id="GDScript_h1alf"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	$VBoxContainer/MasterSlider.value=db_to_linear(AudioServer.get_bus_volume_db(0))
+	$VBoxContainer/SFXSlider.value=db_to_linear(AudioServer.get_bus_volume_db(1))
+	$VBoxContainer/MusicSlider.value=db_to_linear(AudioServer.get_bus_volume_db(2))
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float):
+	pass
+
+
+func _on_music_slider_mouse_exited():
+	release_focus()
+
+
+func _on_sfx_slider_mouse_exited():
+	release_focus()
+
+
+func _on_master_slider_mouse_exited():
+	release_focus()
+"
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -18,7 +43,7 @@ script = ExtResource("1_bp3ig")
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("2_3s234")
+script = SubResource("GDScript_h1alf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AudioOptions"]
 layout_mode = 0

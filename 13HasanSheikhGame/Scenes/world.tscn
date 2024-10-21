@@ -1831,6 +1831,10 @@ rotation = -3.14159
 position = Vector2(3152, 634)
 rotation = -3.14159
 
+[node name="SpikeTrap32" parent="SpikeTrap" instance=ExtResource("15_akfch")]
+position = Vector2(165, 832)
+rotation = 4.71239
+
 [node name="BackgroundObjects" type="Node2D" parent="."]
 
 [node name="1" type="Sprite2D" parent="BackgroundObjects"]

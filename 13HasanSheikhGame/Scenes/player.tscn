@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bd6485lwlxrop"]
+[gd_scene load_steps=42 format=3 uid="uid://bd6485lwlxrop"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_at6ts"]
 [ext_resource type="Texture2D" uid="uid://da8gy2k0bqn1x" path="res://Assets/Treasure Hunters/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/16-Attack 2/Attack 2 01.png" id="2_msmhm"]
@@ -502,9 +502,6 @@ height = 24.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yp7aq"]
 height = 20.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_joiph"]
-radius = 7.07107
-
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_at6ts")
 
@@ -539,10 +536,10 @@ stream = ExtResource("26_drbem")
 stream = ExtResource("12_lgj5y")
 
 [node name="AttackArea" type="Area2D" parent="."]
+position = Vector2(2, -1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(27, 6)
-shape = SubResource("CircleShape2D_joiph")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AttackArea"]
+polygon = PackedVector2Array(29, -3, 26, -18, 1, -16, -5, -8, -5, 7, 0, 13, 12, 13, 28, 8)
 
 [connection signal="healthChanged" from="." to="." method="_on_health_changed"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
