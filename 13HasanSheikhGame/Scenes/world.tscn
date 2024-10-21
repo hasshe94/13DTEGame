@@ -1841,10 +1841,6 @@ rotation = 4.71239
 position = Vector2(258, 819)
 texture = ExtResource("24_xe051")
 
-[node name="4" type="Sprite2D" parent="BackgroundObjects"]
-position = Vector2(735, 1577)
-texture = ExtResource("24_xe051")
-
 [node name="2" type="Sprite2D" parent="BackgroundObjects"]
 position = Vector2(371, 789)
 texture = ExtResource("24_xe051")
