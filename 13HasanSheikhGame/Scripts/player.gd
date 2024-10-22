@@ -82,13 +82,21 @@ func update_state():
 func attack():
 	var overlapping_objects = $AttackArea.get_overlapping_areas()
 	for area in overlapping_objects:
-		if area.is_in_group("enemies"):
-			var enemy = area.get_parent()  # Get the enemy node
-			if enemy.has_method("die"):  # Ensure it has a die() method
-				enemy.die()  # Call the die() method
-				print("Enemy defeated")
-			else:
-				print("Error: Enemy does not have a die() method")
+		if area.get_parent().is_in_group("Enemies"):
+			area.get_parent().die()
+	#var overlapping_objects = $AttackArea.get_overlapping_areas()
+	#for area in overlapping_objects:
+		#if area.get_parent().is_in_group("Enemies"):
+		
+
+	#for area in overlapping_objects:
+		#if area.is_in_group("enemies"):
+			#var enemy = area.get_parent()  # Get the enemy node
+			#if enemy.has_method("die"):  # Ensure it has a die() method
+				#enemy.die()  # Call the die() method
+				#print("Enemy defeated")
+			#else:
+				#print("Error: Enemy does not have a die() method")
 
 	if anim_state == state.HURT:
 		return
@@ -189,13 +197,6 @@ func _physics_process(delta):
 	update_animation(direction)
 	move_and_slide()
 
-
-
-
-
-
-
-
 #func _on_area_2d_body_entered(body):
 	#if body.is_in_group("Hurt"):
 		#get_tree().change_scene_to_file("res://Scenes/world.tscn")
@@ -216,11 +217,6 @@ func _physics_process(delta):
 		
 		#healthChanged.emit(currentHealth)
 
-
-func _on_area_2d_area_entered(area):
-	pass # Replace with function body.
-
-
 func _on_hurt_box_area_entered(area):
 	if area.is_in_group("hurt"):
 		hit()
@@ -228,3 +224,7 @@ func _on_hurt_box_area_entered(area):
 		health()
 	elif area.is_in_group("death"):
 		death()
+
+func _on_attack_area_area_entered(area):
+	if area.is_in_group("enemies"):
+		attack()

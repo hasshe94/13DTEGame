@@ -126,7 +126,7 @@ _data = {
 "default": SubResource("Animation_m7fkm")
 }
 
-[node name="Eagle" type="Area2D" groups=["enemies", "hurt"]]
+[node name="Eagle" type="Area2D" groups=["Enemies", "enemies", "hitBox", "hurt"]]
 script = ExtResource("1_12gh8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["hitBox"]]
