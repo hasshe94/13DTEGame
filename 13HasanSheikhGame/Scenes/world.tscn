@@ -449,10 +449,10 @@ metadata/_edit_use_anchors_ = true
 [node name="ParallaxLayer10" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer10"]
-offset_left = -536.0
-offset_top = -600.0
-offset_right = 2290.0
-offset_bottom = 552.0
+offset_left = 424.0
+offset_top = -672.0
+offset_right = 3250.0
+offset_bottom = 480.0
 scale = Vector2(2, 2)
 texture = ExtResource("11_j8h46")
 stretch_mode = 1
@@ -1919,6 +1919,719 @@ position = Vector2(16, 0)
 
 [node name="deathwater7" parent="Death Water" instance=ExtResource("11_e31ng")]
 position = Vector2(5640, 208)
+
+[node name="deathwater8" parent="Death Water" instance=ExtResource("11_e31ng")]
+position = Vector2(0, -3496)
+rotation = 1.5708
+scale = Vector2(2, 2)
+metadata/_edit_group_ = true
+
+[node name="deathwater" parent="Death Water/deathwater8" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater8" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater8" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater4" parent="Death Water/deathwater8" instance=ExtResource("11_e31ng")]
+position = Vector2(64, 0)
+
+[node name="deathwater5" parent="Death Water/deathwater8" instance=ExtResource("11_e31ng")]
+position = Vector2(80, 0)
+
+[node name="deathwater6" parent="Death Water/deathwater8" instance=ExtResource("11_e31ng")]
+position = Vector2(96, 0)
+
+[node name="deathwater" parent="Death Water/deathwater8/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater8/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater8/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater7" parent="Death Water/deathwater8" instance=ExtResource("11_e31ng")]
+position = Vector2(160, 0)
+
+[node name="deathwater8" parent="Death Water/deathwater8" instance=ExtResource("11_e31ng")]
+position = Vector2(176, 0)
+
+[node name="deathwater9" parent="Death Water/deathwater8" instance=ExtResource("11_e31ng")]
+position = Vector2(192, 0)
+
+[node name="deathwater" parent="Death Water/deathwater8/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater8/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater8/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater4" parent="Death Water/deathwater8/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(64, 0)
+
+[node name="deathwater5" parent="Death Water/deathwater8/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(80, 0)
+
+[node name="deathwater6" parent="Death Water/deathwater8/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(96, 0)
+
+[node name="deathwater" parent="Death Water/deathwater8/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater8/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater8/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater7" parent="Death Water/deathwater8/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(160, 0)
+
+[node name="deathwater8" parent="Death Water/deathwater8/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(176, 0)
+
+[node name="deathwater9" parent="Death Water/deathwater8/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(192, 0)
+
+[node name="deathwater" parent="Death Water/deathwater8/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater8/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater8/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater4" parent="Death Water/deathwater8/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(64, 0)
+
+[node name="deathwater5" parent="Death Water/deathwater8/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(80, 0)
+
+[node name="deathwater6" parent="Death Water/deathwater8/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(96, 0)
+
+[node name="deathwater" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater7" parent="Death Water/deathwater8/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(160, 0)
+
+[node name="deathwater8" parent="Death Water/deathwater8/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(176, 0)
+
+[node name="deathwater9" parent="Death Water/deathwater8/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(192, 0)
+
+[node name="deathwater" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater4" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(64, 0)
+
+[node name="deathwater5" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(80, 0)
+
+[node name="deathwater6" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(96, 0)
+
+[node name="deathwater" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater7" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(160, 0)
+
+[node name="deathwater8" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(176, 0)
+
+[node name="deathwater9" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(192, 0)
+
+[node name="deathwater" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater4" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(64, 0)
+
+[node name="deathwater5" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(80, 0)
+
+[node name="deathwater6" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(96, 0)
+
+[node name="deathwater" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater7" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(152, 0)
+
+[node name="deathwater8" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(168, 0)
+
+[node name="deathwater9" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(184, 0)
+
+[node name="deathwater" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater4" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(64, 0)
+
+[node name="deathwater5" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(80, 0)
+
+[node name="deathwater6" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(96, 0)
+
+[node name="deathwater" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater7" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(160, 0)
+
+[node name="deathwater8" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(176, 0)
+
+[node name="deathwater9" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(192, 0)
+
+[node name="deathwater" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater4" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(64, 0)
+
+[node name="deathwater5" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(80, 0)
+
+[node name="deathwater6" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(96, 0)
+
+[node name="deathwater" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater7" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(160, 0)
+
+[node name="deathwater8" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(176, 0)
+
+[node name="deathwater9" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(192, 0)
+
+[node name="deathwater" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater4" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(64, 0)
+
+[node name="deathwater5" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(80, 0)
+
+[node name="deathwater6" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(96, 0)
+
+[node name="deathwater" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater7" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(152, 0)
+
+[node name="deathwater8" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(168, 0)
+
+[node name="deathwater9" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(184, 0)
+
+[node name="deathwater" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater4" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(64, 0)
+
+[node name="deathwater5" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(80, 0)
+
+[node name="deathwater6" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(96, 0)
+
+[node name="deathwater" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater7" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(152, 0)
+
+[node name="deathwater8" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(168, 0)
+
+[node name="deathwater9" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(184, 0)
+
+[node name="deathwater" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater4" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(64, 0)
+
+[node name="deathwater5" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(80, 0)
+
+[node name="deathwater6" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(96, 0)
+
+[node name="deathwater" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater8/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater9" parent="Death Water" instance=ExtResource("11_e31ng")]
+position = Vector2(5664, 200)
+rotation = 4.71239
+scale = Vector2(2, 2)
+
+[node name="deathwater" parent="Death Water/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater4" parent="Death Water/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(64, 0)
+
+[node name="deathwater5" parent="Death Water/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(80, 0)
+
+[node name="deathwater6" parent="Death Water/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(96, 0)
+
+[node name="deathwater" parent="Death Water/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater7" parent="Death Water/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(160, 0)
+
+[node name="deathwater8" parent="Death Water/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(176, 0)
+
+[node name="deathwater9" parent="Death Water/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(192, 0)
+
+[node name="deathwater" parent="Death Water/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater4" parent="Death Water/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(64, 0)
+
+[node name="deathwater5" parent="Death Water/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(80, 0)
+
+[node name="deathwater6" parent="Death Water/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(96, 0)
+
+[node name="deathwater" parent="Death Water/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater7" parent="Death Water/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(160, 0)
+
+[node name="deathwater8" parent="Death Water/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(176, 0)
+
+[node name="deathwater9" parent="Death Water/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(192, 0)
+
+[node name="deathwater" parent="Death Water/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater4" parent="Death Water/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(64, 0)
+
+[node name="deathwater5" parent="Death Water/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(80, 0)
+
+[node name="deathwater6" parent="Death Water/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(96, 0)
+
+[node name="deathwater" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater7" parent="Death Water/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(160, 0)
+
+[node name="deathwater8" parent="Death Water/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(176, 0)
+
+[node name="deathwater9" parent="Death Water/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(192, 0)
+
+[node name="deathwater" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater4" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(64, 0)
+
+[node name="deathwater5" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(80, 0)
+
+[node name="deathwater6" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(96, 0)
+
+[node name="deathwater" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater7" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(160, 0)
+
+[node name="deathwater8" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(176, 0)
+
+[node name="deathwater9" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(192, 0)
+
+[node name="deathwater" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater4" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(64, 0)
+
+[node name="deathwater5" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(80, 0)
+
+[node name="deathwater6" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(96, 0)
+
+[node name="deathwater" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater7" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(152, 0)
+
+[node name="deathwater8" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(168, 0)
+
+[node name="deathwater9" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(184, 0)
+
+[node name="deathwater" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater4" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(64, 0)
+
+[node name="deathwater5" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(80, 0)
+
+[node name="deathwater6" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(96, 0)
+
+[node name="deathwater" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater7" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(160, 0)
+
+[node name="deathwater8" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(176, 0)
+
+[node name="deathwater9" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(192, 0)
+
+[node name="deathwater" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater4" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(64, 0)
+
+[node name="deathwater5" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(80, 0)
+
+[node name="deathwater6" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(96, 0)
+
+[node name="deathwater" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater7" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(160, 0)
+
+[node name="deathwater8" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(176, 0)
+
+[node name="deathwater9" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(192, 0)
+
+[node name="deathwater" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater4" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(64, 0)
+
+[node name="deathwater5" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(80, 0)
+
+[node name="deathwater6" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(96, 0)
+
+[node name="deathwater" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater7" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(152, 0)
+
+[node name="deathwater8" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(168, 0)
+
+[node name="deathwater9" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(184, 0)
+
+[node name="deathwater" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater4" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(64, 0)
+
+[node name="deathwater5" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(80, 0)
+
+[node name="deathwater6" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(96, 0)
+
+[node name="deathwater" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater7" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(152, 0)
+
+[node name="deathwater8" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(168, 0)
+
+[node name="deathwater9" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(184, 0)
+
+[node name="deathwater" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
+
+[node name="deathwater4" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(64, 0)
+
+[node name="deathwater5" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(80, 0)
+
+[node name="deathwater6" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9" instance=ExtResource("11_e31ng")]
+position = Vector2(96, 0)
+
+[node name="deathwater" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(16, 0)
+
+[node name="deathwater2" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(32, 0)
+
+[node name="deathwater3" parent="Death Water/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater9/deathwater6" instance=ExtResource("11_e31ng")]
+position = Vector2(48, 0)
 
 [node name="HealthPickup" type="Node2D" parent="."]
 
