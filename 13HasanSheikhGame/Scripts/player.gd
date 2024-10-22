@@ -79,15 +79,16 @@ func update_state():
 		anim_state = state.IDLE
 		return
 		
-func attacking():
+func attack():
 	var overlapping_objects = $AttackArea.get_overlapping_areas()
 	for area in overlapping_objects:
-		if area.is_in_group("enemies"):  
-			area.get_parent().die()  
-			print("Enemy defeated")
-
-
-
+		if area.is_in_group("enemies"):
+			var enemy = area.get_parent()  # Get the enemy node
+			if enemy.has_method("die"):  # Ensure it has a die() method
+				enemy.die()  # Call the die() method
+				print("Enemy defeated")
+			else:
+				print("Error: Enemy does not have a die() method")
 
 	if anim_state == state.HURT:
 		return
@@ -95,9 +96,7 @@ func attacking():
 	if Input.is_action_just_pressed("attack"):
 		anim_state = state.ATTACK
 		return  
-		
-		
-		
+
 	if is_on_floor():
 		if velocity == Vector2.ZERO:
 			anim_state = state.IDLE
@@ -136,16 +135,16 @@ func update_animation(direction):
 		state.DIE:
 			animation_player.play("die")
 
-func attack():
-	var overlappng_objects = $AttackArea.get_overlapping_areas()
-
-	
-	for area in overlappng_objects:
-		
-		area.queue_free()
-	
-
-	
+#func attack():
+	#var overlappng_objects = $AttackArea.get_overlapping_areas()
+#
+	#
+	#for area in overlappng_objects:
+		#area.queue_free()
+		#print("enemy defeated")
+	#
+#
+	#
 #func attack():
 	#if not is_attacking:
 		#is_attacking = true
@@ -229,16 +228,3 @@ func _on_hurt_box_area_entered(area):
 		health()
 	elif area.is_in_group("death"):
 		death()
-
-
-
-
-	
-
-
-func _on_attack_area_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.
-
-
-func _on_attack_area_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
