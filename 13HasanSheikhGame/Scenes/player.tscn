@@ -541,7 +541,8 @@ bus = &"SFX"
 position = Vector2(2, -1)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AttackArea"]
-polygon = PackedVector2Array(29, -3, 26, -18, 1, -16, -5, -8, -5, 7, 0, 13, 12, 13, 28, 8)
+position = Vector2(-6, 0)
+polygon = PackedVector2Array(34, -2, 26, -18, 1, -16, -10, -1, -7, 9, 0, 13, 12, 13, 31, 11)
 
 [node name="HurtBox" type="Area2D" parent="."]
 

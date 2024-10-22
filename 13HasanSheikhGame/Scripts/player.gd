@@ -81,9 +81,14 @@ func update_state():
 		
 func attack():
 	var overlapping_objects = $AttackArea.get_overlapping_areas()
+	print("Attack triggered. Overlapping objects:", overlapping_objects.size())
+
 	for area in overlapping_objects:
+		print("Checking area:", area)
 		if area.get_parent().is_in_group("Enemies"):
+			print("Enemy detected:", area.get_parent())
 			area.get_parent().die()
+
 	#var overlapping_objects = $AttackArea.get_overlapping_areas()
 	#for area in overlapping_objects:
 		#if area.get_parent().is_in_group("Enemies"):

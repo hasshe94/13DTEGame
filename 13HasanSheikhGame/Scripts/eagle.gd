@@ -5,10 +5,12 @@ var direction = 1
 # Called when the node enters the scene tree for the first time.
 
 func die():
+	print("Enemy is dying.")
 	sfx_deathh.play()
 	await sfx_deathh.finished
 	await $AnimationPlayer.play("death")  
-	queue_free()  
+	queue_free()
+
 
 func _ready():
 	$Timer.wait_time = flip_time
