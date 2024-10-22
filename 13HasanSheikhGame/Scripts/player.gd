@@ -23,7 +23,7 @@ enum state {IDLE, RUNNING, JUMPUP, JUMPDOWN, HURT, CROUCH, ROLL, ATTACK, DIE}
 @onready var animator = $AnimatedSprite2D
 @onready var animation_player = $AnimationPlayer
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
@@ -82,8 +82,8 @@ func update_state():
 func attacking():
 	var overlapping_objects = $AttackArea.get_overlapping_areas()
 	for area in overlapping_objects:
-		if area.is_in_group("enemies"):  # Check if the object is an enemy
-			area.get_parent().die()  # Assuming the enemy has a `die` function
+		if area.is_in_group("enemies"):  
+			area.get_parent().die()  
 			print("Enemy defeated")
 
 
@@ -94,7 +94,7 @@ func attacking():
 
 	if Input.is_action_just_pressed("attack"):
 		anim_state = state.ATTACK
-		return  # Prevent state from being overridden
+		return  
 		
 		
 		
@@ -180,8 +180,6 @@ func _physics_process(delta):
 		anim_state = state.ROLL
 
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("left", "right")
 	if direction:
 		velocity.x = move_toward(velocity.x,direction*speed, acceleration)
