@@ -1,4 +1,5 @@
 extends CharacterBody2D
+
 var is_attacking = false
 @onready var sfx_jump = $sfx_jump
 @onready var sfx_death = $sfx_death
@@ -13,8 +14,6 @@ var dead = false
 var hp = 10
 @onready var health_bar = %HealthBar
 @onready var sfx_collectedd = $sfx_collectedd
-#@export var maxHealth = 3
-#@onready var currentHealth: int = maxHealth
 
 enum state {IDLE, RUNNING, JUMPUP, JUMPDOWN, HURT, CROUCH, ROLL, ATTACK, DIE}
 
@@ -23,7 +22,6 @@ enum state {IDLE, RUNNING, JUMPUP, JUMPDOWN, HURT, CROUCH, ROLL, ATTACK, DIE}
 @onready var animator = $AnimatedSprite2D
 @onready var animation_player = $AnimationPlayer
 
-
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
@@ -31,20 +29,18 @@ func _ready():
 	
 func _process(delta):
 	health_bar.value = hp
-	
 
 func health():
 	hp += 3
 	health_bar.value = hp
 	sfx_collectedd.play()
 
-
 func hit():
-	if dead:return
+	if dead: return
 	hp -= 2
 	health_bar.value = hp
 	sfx_hurt.play()
-	if hp <=0:
+	if hp <= 0:
 		animation_player.play("die")
 		sfx_death.play()
 		dead = true
@@ -52,82 +48,81 @@ func hit():
 		get_tree().change_scene_to_file("res://Scenes/DeathScreen.tscn")
 
 func death():
-	if dead:return
-	hp -=1000000000
+	if dead: return
+	hp -= 1000000000
 	health_bar.value = hp
-	if hp <=0:
+	if hp <= 0:
 		animation_player.play("die")
 		sfx_death.play()
 		dead = true
 		await animation_player.animation_finished
 		get_tree().change_scene_to_file("res://Scenes/DeathScreen.tscn")
 
-#func die():
-	#anim_state=state.DIE
-	#update_animation(0)
-#
-#func _on_animaition_finished(anim_state):
-	#if anim_state == "die":
-		#get_tree().change_scene_to_file("res://Scenes/death_screen.tscn")
-	
-
-
 func update_state():
 	if anim_state == state.ATTACK:
 		await animation_player.animation_finished
-		print("done")
+		print("Attack done")
 		anim_state = state.IDLE
 		return
-		
+
 func attack():
-	var overlapping_objects = $AttackArea.get_overlapping_areas()
-	print("Attack triggered. Overlapping objects:", overlapping_objects.size())
-
-	for area in overlapping_objects:
-		print("Checking area:", area)
-		if area.get_parent().is_in_group("Enemies"):
-			print("Enemy detected:", area.get_parent())
-			area.get_parent().die()
-
-	#var overlapping_objects = $AttackArea.get_overlapping_areas()
-	#for area in overlapping_objects:
-		#if area.get_parent().is_in_group("Enemies"):
-		
-
-	#for area in overlapping_objects:
-		#if area.is_in_group("enemies"):
-			#var enemy = area.get_parent()  # Get the enemy node
-			#if enemy.has_method("die"):  # Ensure it has a die() method
-				#enemy.die()  # Call the die() method
-				#print("Enemy defeated")
-			#else:
-				#print("Error: Enemy does not have a die() method")
-
-	if anim_state == state.HURT:
+	if not is_attacking:  # Only attack if the player is attacking
 		return
+	
+	var overlapping_objects = $AttackArea.get_overlapping_areas()
+	
+	for area in overlapping_objects:
+		if area.is_in_group("enemies"):
+			area.queue_free()
+			print("Enemy defeated")
 
-	if Input.is_action_just_pressed("attack"):
+func attacking():
+	if not is_attacking:
+		is_attacking = true
+		print("Attacking!")
+		$AnimationPlayer.play("attack")
+		await $AnimationPlayer.animation_finished  # Wait for attack animation to finish
+		is_attacking = false  # Reset the attacking state after the attack animation finishes
+
+func _physics_process(delta):
+	if dead: return
+	if not is_on_floor():
+		velocity.y += gravity * delta
+
+	# Handle jump
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = jump_velocity
+		sfx_jump.play()
+
+	# Handle attack
+	if Input.is_action_just_pressed("attack") and not is_attacking:
 		anim_state = state.ATTACK
-		return  
+		attacking()
 
-	if is_on_floor():
-		if velocity == Vector2.ZERO:
-			anim_state = state.IDLE
-		elif velocity.x !=0:
-			anim_state = state.RUNNING
+	# Handle crouch
+	if Input.is_action_just_pressed("crouch") and is_on_floor():
+		anim_state = state.CROUCH
+
+	# Handle roll
+	if Input.is_action_just_pressed("roll") and is_on_floor():
+		anim_state = state.ROLL
+
+	var direction = Input.get_axis("left", "right")
+	if direction:
+		velocity.x = move_toward(velocity.x, direction * speed, acceleration)
 	else:
-		if velocity.y < 0:
-			anim_state = state.JUMPUP
-		else:
-			anim_state = state.JUMPDOWN
-
+		velocity.x = move_toward(velocity.x, 0, acceleration)
+	
+	update_state()
+	update_animation(direction)
+	move_and_slide()
 
 func update_animation(direction):
-
 	if direction > 0:
 		animator.flip_h = false
 	elif direction < 0:
 		animator.flip_h = true
+
 	match anim_state:
 		state.IDLE:
 			animation_player.play("idle")
@@ -147,80 +142,6 @@ func update_animation(direction):
 			animation_player.play("attack")
 		state.DIE:
 			animation_player.play("die")
-
-#func attack():
-	#var overlappng_objects = $AttackArea.get_overlapping_areas()
-#
-	#
-	#for area in overlappng_objects:
-		#area.queue_free()
-		#print("enemy defeated")
-	#
-#
-	#
-#func attack():
-	#if not is_attacking:
-		#is_attacking = true
-		#print("Attacking!")
-		#$AnimationPlayer.play("attack")
-		#is_attacking = false
-
-
-func _physics_process(delta):
-	# Add the gravity.
-	if dead : return
-	if not is_on_floor():
-		velocity.y += gravity * delta
-
-
-
-
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = jump_velocity
-		sfx_jump.play()
-
-		
-	if Input.is_action_just_pressed("attack"):
-		anim_state = state.ATTACK
-		attack()
-
-	if Input.is_action_just_pressed("crouch") and is_on_floor():
-		anim_state = state.CROUCH
-
-	if Input.is_action_just_pressed("roll") and is_on_floor():
-		anim_state = state.ROLL
-
-
-	var direction = Input.get_axis("left", "right")
-	if direction:
-		velocity.x = move_toward(velocity.x,direction*speed, acceleration)
-	else:
-		velocity.x = move_toward(velocity.x, 0, acceleration)
-	
-	update_state()
-	update_animation(direction)
-	move_and_slide()
-
-#func _on_area_2d_body_entered(body):
-	#if body.is_in_group("Hurt"):
-		#get_tree().change_scene_to_file("res://Scenes/world.tscn")
-
-
-	
-
-#func _on_area_2d_2_body_entered(body):
-	#if body.is_in_group("Hurt"):
-		#get_tree().change_scene_to_file("res://Scenes/world.tscn")
-
-
-#func _on_area_2d_area_entered(area):
-	#if area.name == "hitBox":
-		#currentHealth -=1
-		#if currentHealth <0:
-			#currentHealth = maxHealth
-		
-		#healthChanged.emit(currentHealth)
 
 func _on_hurt_box_area_entered(area):
 	if area.is_in_group("hurt"):

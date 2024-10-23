@@ -59,7 +59,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2wya6"]
 size = Vector2(20, 17)
 
-[node name="Opposum" type="CharacterBody2D" groups=["hurt"]]
+[node name="Opposum" type="CharacterBody2D" groups=["enemies", "hurt"]]
 script = ExtResource("1_vt0bs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["hurt"]]
@@ -74,7 +74,7 @@ autoplay = "default"
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="Area2D" type="Area2D" parent="." groups=["Enemies", "enemies", "hurt"]]
+[node name="Area2D" type="Area2D" parent="." groups=["enemies", "hurt"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -4.5)
